@@ -1,16 +1,5 @@
 # Plex Meta Manager Overlay Reset
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/meisnate12/PMM-Overlay-Reset?style=plastic)](https://github.com/meisnate12/PMM-Overlay-Reset/releases)
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/meisnate12/pmm-overlay-reset?label=docker&sort=semver&style=plastic)](https://hub.docker.com/r/meisnate12/pmm-overlay-reset)
-[![Docker Pulls](https://img.shields.io/docker/pulls/meisnate12/pmm-overlay-reset?style=plastic)](https://hub.docker.com/r/meisnate12/pmm-overlay-reset)
-[![Develop GitHub commits since latest stable release (by SemVer)](https://img.shields.io/github/commits-since/meisnate12/PMM-Overlay-Reset/latest/develop?label=Commits%20in%20Develop&style=plastic)](https://github.com/meisnate12/PMM-Overlay-Reset/tree/develop)
-
-[![Discord](https://img.shields.io/discord/822460010649878528?color=%2300bc8c&label=Discord&style=plastic)](https://discord.gg/NfH6mGFuAB)
-[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/PlexMetaManager?color=%2300bc8c&label=r%2FPlexMetaManager&style=plastic)](https://www.reddit.com/r/PlexMetaManager/)
-[![Wiki](https://img.shields.io/readthedocs/plex-meta-manager?color=%2300bc8c&style=plastic)](https://metamanager.wiki/en/latest/home/scripts/overlay-reset.html)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/meisnate12?color=%238a2be2&style=plastic)](https://github.com/sponsors/meisnate12)
-[![Sponsor or Donate](https://img.shields.io/badge/-Sponsor%2FDonate-blueviolet?style=plastic)](https://github.com/sponsors/meisnate12)
-
 Plex Meta Manager Overlay Reset is an open source Python 3 project that has been created to Remove all Overlays placed on a Plex Library.
 
 ## Installing PMM Overlay Reset

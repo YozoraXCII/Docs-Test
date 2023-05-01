@@ -1,16 +1,5 @@
 # Plex Image Cleanup
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/meisnate12/Plex-Image-Cleanup?style=plastic)](https://github.com/meisnate12/Plex-Image-Cleanup/releases)
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/meisnate12/plex-image-cleanup?label=docker&sort=semver&style=plastic)](https://hub.docker.com/r/meisnate12/plex-image-cleanup)
-[![Docker Pulls](https://img.shields.io/docker/pulls/meisnate12/plex-image-cleanup?style=plastic)](https://hub.docker.com/r/meisnate12/plex-image-cleanup)
-[![Develop GitHub commits since latest stable release (by SemVer)](https://img.shields.io/github/commits-since/meisnate12/Plex-Image-Cleanup/latest/develop?label=Commits%20in%20Develop&style=plastic)](https://github.com/meisnate12/Plex-Image-Cleanup/tree/develop)
-
-[![Discord](https://img.shields.io/discord/822460010649878528?color=%2300bc8c&label=Discord&style=plastic)](https://discord.gg/NfH6mGFuAB)
-[![Reddit](https://img.shields.io/reddit/subreddit-subscribers/PlexMetaManager?color=%2300bc8c&label=r%2FPlexMetaManager&style=plastic)](https://www.reddit.com/r/PlexMetaManager/)
-[![Wiki](https://img.shields.io/readthedocs/plex-meta-manager?color=%2300bc8c&style=plastic)](https://metamanager.wiki/en/latest/home/scripts/image-cleanup.html)
-[![GitHub Sponsors](https://img.shields.io/github/sponsors/meisnate12?color=%238a2be2&style=plastic)](https://github.com/sponsors/meisnate12)
-[![Sponsor or Donate](https://img.shields.io/badge/-Sponsor%2FDonate-blueviolet?style=plastic)](https://github.com/sponsors/meisnate12)
-
 Your Plex folders are growing out of control. You use overlays from [Plex Meta Manager](https://github.com/meisnate12/Plex-Meta-Manager) (PMM) or upload lots of custom art from [Title Card Maker](https://github.com/CollinHeist/TitleCardMaker) (TCM) that you no longer want to use or need to eliminate. You don't want to perform the [plex dance](https://www.plexopedia.com/plex-media-server/general/plex-dance/) if you can avoid it. This script will free up gigs of space....
 
 As well as being able to clean the PhotoTranscoder Directory and running the Plex operations Empty Trash, Clean Bundles, and Optimize DB. 

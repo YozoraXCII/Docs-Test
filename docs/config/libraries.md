@@ -10,66 +10,65 @@ Attributes are used to instruct Plex Meta Manager what actions to take, such as 
 
 This example is an advanced version of the library mappings which highlights some attributes being set at the global level, and some being set at the library level:
 
-<details>
-  <summary>Click to Expand</summary>
+???+ example "Example Library Mappings"
 
-In this example, the `"TV Shows On Second Plex"` library has a library-level `plex` configuration, which takes priority over the `plex` configuration set at the global level. <br>
+    In this example, the `"TV Shows On Second Plex"` library has a library-level `plex` configuration, which takes priority over the `plex` configuration set at the global level.
+    
+    The `"Anime"` library also has a library-level `radarr` configuration, which takes priority over the `radarr` configuration set at the global level.
 
-The `"Anime"` library also has a library-level `radarr` configuration, which takes priority over the `radarr` configuration set at the global level.
-
-```yaml
-libraries:
-  Movies:
-    metadata_path:
-      - file: config/Movies.yml
-      - pmm: imdb
-      - pmm: studio
-      - pmm: genre
-      - pmm: actor
-    operations:
-      mass_critic_rating_update: tmdb
-      split_duplicates: true
-  TV Shows:
-    metadata_path:
-      - file: config/TV Shows.yml
-      - pmm: tmdb
-      - pmm: network
-    overlay_path:
-      - remove_overlays: false
-      - file: config/Overlays.yml
-  TV Shows On Second Plex:
-    library_name: TV Shows
+    ```yaml
+    libraries:
+      Movies:
+        metadata_path:
+          - file: config/Movies.yml
+          - pmm: imdb
+          - pmm: studio
+          - pmm: genre
+          - pmm: actor
+        operations:
+          mass_critic_rating_update: tmdb
+          split_duplicates: true
+      TV Shows:
+        metadata_path:
+          - file: config/TV Shows.yml
+          - pmm: tmdb
+          - pmm: network
+        overlay_path:
+          - remove_overlays: false
+          - file: config/Overlays.yml
+      TV Shows On Second Plex:
+        library_name: TV Shows
+        plex:
+          url: http://192.168.1.98:32400
+          token: ####################
+        metadata_path:
+          - file: config/TV Shows.yml
+          - pmm: tmdb
+          - pmm: network
+      Anime:
+        metadata_path:
+          - file: config/Anime.yml
+          - pmm: myanimelist
+        radarr:
+          url: http://192.168.1.45:7878
+          token: ################################
+          root_folder_path: S:/Anime
+        settings:
+          asset_directory: config/assets/anime
     plex:
-      url: http://192.168.1.98:32400
+      url: http://192.168.1.12:32400
       token: ####################
-    metadata_path:
-      - file: config/TV Shows.yml
-      - pmm: tmdb
-      - pmm: network
-  Anime:
-    metadata_path:
-      - file: config/Anime.yml
-      - pmm: myanimelist
     radarr:
-      url: http://192.168.1.45:7878
+      url: http://192.168.1.12:7878
       token: ################################
-      root_folder_path: S:/Anime
-    settings:
-      asset_directory: config/assets/anime
-plex:
-  url: http://192.168.1.12:32400
-  token: ####################
-radarr:
-  url: http://192.168.1.12:7878
-  token: ################################
-  add: true
-  root_folder_path: S:/Movies
-  monitor: true
-  availability: announced
-  quality_profile: HD-1080p
-  tag: pmm
-  search: false
-```
+      add: true
+      root_folder_path: S:/Movies
+      monitor: true
+      availability: announced
+      quality_profile: HD-1080p
+      tag: pmm
+      search: false
+    ```
 
 ### Attributes
 
@@ -93,26 +92,26 @@ The available attributes for each library are as follows:
 ### Library Name
 
 Each library that the user wants Plex Meta Manager to interact with must be documented with a library attribute. A library attribute is represented by the mapping name (i.e. `Movies` or `TV Shows`), this must have a unique name that correlates with a library of the same name within the Plex Media Server. In the situation that two servers are being connected to which both have libraries of the same name, the `library_name` attribute can be utilized to specify the real Library Name, whilst the library attribute's mapping name can be made into a placeholder. This is showcased below:
-<details>
-  <summary>Example</summary>
 
-```yaml
-libraries:
-  Movies01:
-    library_name: Movies
-  Movies02:
-    library_name: Movies
+???+ Library Name Example
+    
+    ```yaml
+    libraries:
+      Movies01:
+        library_name: Movies
+      Movies02:
+        library_name: Movies
+        plex:
+          url: http://192.168.1.35:32400
+          token: ####################
+      TV Shows:
+      Anime:
     plex:
-      url: http://192.168.1.35:32400
+      url: http://192.168.1.12:32400
       token: ####################
-  TV Shows:
-  Anime:
-plex:
-  url: http://192.168.1.12:32400
-  token: ####################
-```
-
-* In this example, `"Movies01"`, `"TV Shows"`, and `"Anime"` will all use the global plex server (http://192.168.1.12:32400) which is defined using the global `plex` mapping. `"Movies02"` will use the plex server http://192.168.1.35:32400 which is defined under its `plex` mapping over the global mapping.
+    ```
+    
+    * In this example, `"Movies01"`, `"TV Shows"`, and `"Anime"` will all use the global plex server (http://192.168.1.12:32400) which is defined using the global `plex` mapping. `"Movies02"` will use the plex server http://192.168.1.35:32400 which is defined under its `plex` mapping over the global mapping.
 
 ### Metadata Path
 
@@ -147,14 +146,16 @@ libraries:
       - file: config/Overlays.yml
 ```
 
-#### Special Overlay Path Calls
+### Special Overlay Path Calls
 
-???+ warning "Remove Overlays"
+#### Remove Overlays
 
-    **This will remove all overlays from your library**
+This will remove all overlays from your library, but will not delete the overlaid images from your system, resulting in [image bloat](../pmm/essentials/scripts/image-cleanup.md).
     
-    You can remove overlays from a library by adding `remove_overlays: true` to `overlay_path`. This will remove all overlays when run and not generate new ones.
-    
+You can remove overlays from a library by adding `remove_overlays: true` to `overlay_path`. This will remove all overlays when run and not generate new ones.
+
+???+ warning "Proceed with Caution"
+
     ```yaml
     libraries:
       TV Shows:
@@ -165,12 +166,14 @@ libraries:
           - file: config/Overlays.yml
     ```
 
-???+ danger "Reapply Overlays"
+#### Reapply Overlays
 
-    ** This will reapply all overlays on each run until this attribute is set to `false`, which will result in [image bloat](https://metamanager.wiki/en/nightly/home/scripts/image-cleanup.html) **
+This will reapply all overlays on each run until this attribute is set to `false`, which will result in [image bloat](../pmm/essentials/scripts/image-cleanup.md).
 
-    You can reapply overlays from a library by adding `reapply_overlays: true` to `overlay_path`. This will reapply overlays to every item in your library.
-    
+You can reapply overlays from a library by adding `reapply_overlays: true` to `overlay_path`. This will reapply overlays to every item in your library.
+
+???+ danger Proceed with Caution
+
     ```yaml
     libraries:
       TV Shows:
@@ -181,10 +184,14 @@ libraries:
           - file: config/Overlays.yml
     ```
 
-??? danger "Reset Overlays"
+#### Reset Overlays
 
-    You can reset overlays from a library by adding `reset_overlays` to `overlay_path` and setting it to either `tmdb` or `plex` depending on where you want to source the images from. This will use the reset image when overlaying items in your library.
-    
+This will reset all posters to the desired source on each run until this attribute is set to `false`, and will reapply all overlays on each run, which will result in [image bloat](../pmm/essentials/scripts/image-cleanup.md).
+
+You can reset overlays from a library by adding `reset_overlays` to `overlay_path` and setting it to either `tmdb` or `plex` depending on where you want to source the images from. This will use the reset image when overlaying items in your library.
+
+???+ danger "Proceed with Caution"
+
     ```yaml
     libraries:
       TV Shows:
@@ -195,21 +202,23 @@ libraries:
           - file: config/Overlays.yml
     ```
 
-??? tip "Schedule Overlays"
+### Schedule Overlays
 
 You can schedule all overlays from a library by adding `schedule` to `overlay_path` and setting it to [Any Schedule Option](../metadata/details/schedule).
+    
+You cannot schedule individual Overlay Files, as any unscheduled overlay file will be removed each time PMM is run.
 
-**You cannot schedule individual Overlay Files.** 
+???+ tip "Example"
 
-```yaml
-libraries:
-  TV Shows:
-    metadata_path:
-      - file: config/TV Shows.yml
-    overlay_path:
-      - schedule: weekly(sunday)
-      - file: config/Overlays.yml
-```
+    ```yaml
+    libraries:
+      TV Shows:
+        metadata_path:
+          - file: config/TV Shows.yml
+        overlay_path:
+          - schedule: weekly(sunday)
+          - file: config/Overlays.yml
+    ```
 
 ### Report Path
 

@@ -47,7 +47,7 @@ A YAML format primarily uses 3 node types:
 Let us try and identify where these appear in the sample YAML file we saw earlier.
 
 ```yaml
-# Strats with a top level Dictionary with keys `libraries` and `settings`
+# Starts with a top level Dictionary with keys `libraries` and `settings`
 libraries:                        # Value is a Dictionary with keys `Movies` and `TV Shows`
   Movies:                         # Value is a Dictionary with keys `metadata_path` and `overlay_path`
     metadata_path:                # Value is a List with two Items

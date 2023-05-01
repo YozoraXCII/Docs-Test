@@ -1,6 +1,6 @@
 # Music Library Metadata
 
-You can have Plex Meta Manager edit the metadata of Artists, Albums, and Tracks by adding them to the `metadata` mapping of a Metadata File.
+You can have the script edit the metadata of Artists, Albums, and Tracks by adding them to the `metadata` mapping of a Metadata File.
 
 An example of multiple metadata edits in a music library is below:
 
@@ -136,4 +136,3 @@ All these attributes only work with Artists.
 | Attribute       | Values                                                                                                                                                                                                                                           |
 |:----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `album_sorting` | <table class="clearTable"><tbody><tr><td>`default`</td><td>Library default</td></tr><tr><td>`oldest`</td><td>Oldest first</td></tr><tr><td>`newest`</td><td>Newest first</td></tr><tr><td>`name`</td><td>Alphabetical</td></tr></tbody></table>  |
-

@@ -1,6 +1,6 @@
 # Movie Library Metadata
 
-You can have Plex Meta Manager edit the metadata of Movies by adding them to the `metadata` mapping of a Metadata File.
+You can have the script edit the metadata of Movies by adding them to the `metadata` mapping of a Metadata File.
 
 An example of multiple metadata edits in a movie library is below:
 
