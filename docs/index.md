@@ -36,11 +36,11 @@ Unlock the potential of your libraries with Plex Meta Manager, which makes it ea
 
 **Example Movie Collections using the [Plex Meta Manager Defaults](#Plex Meta Manager-defaults)** (click to enlarge):
 
-![Movie Collection Preview](/assets/movie-collection-preview.png){width="600"}
+![Movie Collection Preview](assets/movie-collection-preview.png){width="600"}
 
 **Example Show Overlays using the [Plex Meta Manager Defaults](#Plex Meta Manager-defaults)** (click to enlarge):
 
-![Show Library Preview](/assets/show-library-preview.png){ width="600" }
+![Show Library Preview](assets/show-library-preview.png){ width="600" }
 
 
 ## Plex Meta Manager Defaults
