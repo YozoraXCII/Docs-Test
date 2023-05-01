@@ -1,0 +1,7139 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plex Meta Manager is an open-source python project allowing you to unlock the potential of your media server.">
+      
+      
+        <meta name="author" content="meisnate12">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../overlay-reset/">
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Plex Image Cleanup - Plex Meta Manager Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#plex-image-cleanup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Plex Meta Manager Wiki" class="md-header__button md-logo" aria-label="Plex Meta Manager Wiki" data-md-component="logo">
+      
+  <img src="../../../../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plex Meta Manager Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plex Image Cleanup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+            
+              <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YozoraXCII/Docs-Test" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link md-tabs__link--active">
+        PLEX META MANAGER
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../config/configuration/" class="md-tabs__link">
+        CONFIGURATION FILE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../defaults/guide/" class="md-tabs__link">
+        DEFAULT FILES
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../builders/templates/" class="md-tabs__link">
+        CUSTOM FILES
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../metadata/metadata/movie/" class="md-tabs__link">
+        METADATA
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Plex Meta Manager Wiki" class="md-nav__button md-logo" aria-label="Plex Meta Manager Wiki" data-md-component="logo">
+      
+  <img src="../../../../assets/icon.png" alt="logo">
+
+    </a>
+    Plex Meta Manager Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YozoraXCII/Docs-Test" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          PLEX META MANAGER
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          PLEX META MANAGER
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          INSTALLATION
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          INSTALLATION
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/installation/" class="md-nav__link">
+        Installing PMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+          Installation Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Installation Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/unraid/" class="md-nav__link">
+        unRAID Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/kubernetes/" class="md-nav__link">
+        Kubernetes Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/qnap/" class="md-nav__link">
+        QNAP Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/synology/" class="md-nav__link">
+        Synology Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2_3" id="__nav_1_2_3_label" tabindex="0">
+          In-Depth Walkthroughs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          In-Depth Walkthroughs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/local/" class="md-nav__link">
+        Local (Win/Mac/Linux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          POST-INSTALL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          POST-INSTALL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../environmental/" class="md-nav__link">
+        Run Commands & Env Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kb/" class="md-nav__link">
+        Knowledgebase / FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+          MISCELLANEOUS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          MISCELLANEOUS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ratings/" class="md-nav__link">
+        Plex Ratings Explained
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/scheduling/" class="md-nav__link">
+        Scheduling Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/assets/" class="md-nav__link">
+        Image Asset Directory Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logs/" class="md-nav__link">
+        Log Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yaml/" class="md-nav__link">
+        YAML File Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          COMPANION SCRIPTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          COMPANION SCRIPTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plex Image Cleanup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Plex Image Cleanup
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-plex-image-cleanup" class="md-nav__link">
+    Installing Plex Image Cleanup
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Plex Image Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-walkthroughs" class="md-nav__link">
+    Install Walkthroughs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-install-overview" class="md-nav__link">
+    Local Install Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-install-overview" class="md-nav__link">
+    Docker Install Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Install Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    Docker Run:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker Compose:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-options" class="md-nav__link">
+    Global Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-env-file" class="md-nav__link">
+    Example .env File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-options" class="md-nav__link">
+    Base Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Base Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plex-path" class="md-nav__link">
+    Plex Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    Mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-from-plex-api" class="md-nav__link">
+    Download From Plex API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-from-local" class="md-nav__link">
+    Copy From Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-existing" class="md-nav__link">
+    Use Existing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-operations" class="md-nav__link">
+    Other Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#photo-transcoder" class="md-nav__link">
+    Photo Transcoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-trash" class="md-nav__link">
+    Empty Trash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-bundles" class="md-nav__link">
+    Clean Bundles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-db" class="md-nav__link">
+    Optimize DB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    Other Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discord-url" class="md-nav__link">
+    Discord URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    Timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep" class="md-nav__link">
+    Sleep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trace" class="md-nav__link">
+    Trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-requests" class="md-nav__link">
+    Log Requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-schedule" class="md-nav__link">
+    Continuous Schedule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-blocks" class="md-nav__link">
+    Schedule Blocks
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule-block-parts" class="md-nav__link">
+    Schedule Block Parts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-block-example" class="md-nav__link">
+    Schedule Block Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overlay-reset/" class="md-nav__link">
+        PMM Overlay Reset
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          USEFUL LINKS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          USEFUL LINKS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://features.metamanager.wiki/" class="md-nav__link">
+        Feature Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/meisnate12/Plex-Meta-Manager/issues" class="md-nav__link">
+        Bugs & Issues
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/meisnate12/Plex-Meta-Manager-Configs" class="md-nav__link">
+        User Configs Repository
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/NfH6mGFuAB" class="md-nav__link">
+        Discord Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/sponsors/meisnate12" class="md-nav__link">
+        Donate/Sponsor PMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://metamanager.wiki/en/latest/home/acknowledgements.html" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          CONFIGURATION FILE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          CONFIGURATION FILE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/configuration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          STRUCTURE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          STRUCTURE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/libraries/" class="md-nav__link">
+        Library Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/metadata/" class="md-nav__link">
+        Metadata Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/overlay/" class="md-nav__link">
+        Overlay Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/playlist/" class="md-nav__link">
+        Playlist Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/paths/" class="md-nav__link">
+        Path Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/operations/" class="md-nav__link">
+        Library Operations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/webhooks/" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          SERVICES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          SERVICES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/plex/" class="md-nav__link">
+        Plex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/tautulli/" class="md-nav__link">
+        Tautulli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/radarr/" class="md-nav__link">
+        Radarr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/sonarr/" class="md-nav__link">
+        Sonarr
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          THIRD-PARTY CONNECTORS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          THIRD-PARTY CONNECTORS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/notifiarr/" class="md-nav__link">
+        Notifiarr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/tmdb/" class="md-nav__link">
+        TMDb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/trakt/" class="md-nav__link">
+        Trakt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/mdblist/" class="md-nav__link">
+        MdbList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/omdb/" class="md-nav__link">
+        OMDb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/anidb/" class="md-nav__link">
+        AniDB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../config/myanimelist/" class="md-nav__link">
+        MyAnimeList
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          DEFAULT FILES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          DEFAULT FILES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/guide/" class="md-nav__link">
+        Defaults Usage Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/files/" class="md-nav__link">
+        Defaults Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          COLLECTIONS DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          COLLECTIONS DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+          Click to Expand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Click to Expand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/collection_variables/" class="md-nav__link">
+        Shared Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/separators/" class="md-nav__link">
+        Separators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_4" id="__nav_3_3_1_4_label" tabindex="0">
+          Awards Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Awards Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/separator/" class="md-nav__link">
+        Separator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/oscars/" class="md-nav__link">
+        Academy Awards (Oscars)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/bafta/" class="md-nav__link">
+        British Academy of Film Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/cannes/" class="md-nav__link">
+        Cannes Film Festival Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/choice/" class="md-nav__link">
+        Critics Choice Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/emmy/" class="md-nav__link">
+        Emmy Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/golden/" class="md-nav__link">
+        Golden Globe Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/spirit/" class="md-nav__link">
+        Independent Spirit Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/sundance/" class="md-nav__link">
+        Sundance Film Festival Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/award/other/" class="md-nav__link">
+        Other Awards
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_5" id="__nav_3_3_1_5_label" tabindex="0">
+          Charts Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Charts Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/separator/" class="md-nav__link">
+        Separator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/basic/" class="md-nav__link">
+        Basic Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/anilist/" class="md-nav__link">
+        AniList Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/flixpatrol/" class="md-nav__link">
+        Flixpatrol Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/imdb/" class="md-nav__link">
+        IMDb Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/myanimelist/" class="md-nav__link">
+        MyAnimeList Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/tautulli/" class="md-nav__link">
+        Tautulli Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/tmdb/" class="md-nav__link">
+        TMDb Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/trakt/" class="md-nav__link">
+        Trakt Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/chart/other/" class="md-nav__link">
+        Other Charts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_6" id="__nav_3_3_1_6_label" tabindex="0">
+          Movie Library Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Movie Library Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/actor/" class="md-nav__link">
+        Actors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/audio_language/" class="md-nav__link">
+        Audio Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/based/" class="md-nav__link">
+        Based On...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/collectionless/" class="md-nav__link">
+        Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_cs/" class="md-nav__link">
+        Common Sense Media Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_mal/" class="md-nav__link">
+        MyAnimeList Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/content_rating_us/" class="md-nav__link">
+        Content Ratings (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_uk/" class="md-nav__link">
+        Content Ratings (UK)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/country/" class="md-nav__link">
+        Countries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/decade/" class="md-nav__link">
+        Decades
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/director/" class="md-nav__link">
+        Directors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/franchise/" class="md-nav__link">
+        Franchises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/genre/" class="md-nav__link">
+        Genres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/producer/" class="md-nav__link">
+        Producers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/resolution/" class="md-nav__link">
+        Resolutions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/seasonal/" class="md-nav__link">
+        Seasonal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/studio/" class="md-nav__link">
+        Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/studio_anime/" class="md-nav__link">
+        Anime Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/subtitle_language/" class="md-nav__link">
+        Subtitle Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/universe/" class="md-nav__link">
+        Universes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/movie/writer/" class="md-nav__link">
+        Writers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/year/" class="md-nav__link">
+        Years
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_7" id="__nav_3_3_1_7_label" tabindex="0">
+          Show Library Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Show Library Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/actor/" class="md-nav__link">
+        Actors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/audio_language/" class="md-nav__link">
+        Audio Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/based/" class="md-nav__link">
+        Based On...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/collectionless/" class="md-nav__link">
+        Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_cs/" class="md-nav__link">
+        Common Sense Media Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_mal/" class="md-nav__link">
+        MyAnimeList Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/show/content_rating_us/" class="md-nav__link">
+        US Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/content_rating_uk/" class="md-nav__link">
+        UK Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/show/country/" class="md-nav__link">
+        Countries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/show/decade/" class="md-nav__link">
+        Decades
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/show/franchise/" class="md-nav__link">
+        Franchises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/genre/" class="md-nav__link">
+        Genres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/show/network/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/resolution/" class="md-nav__link">
+        Resolutions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/studio/" class="md-nav__link">
+        Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/studio_anime/" class="md-nav__link">
+        Anime Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/subtitle_language/" class="md-nav__link">
+        Subtitle Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/universe/" class="md-nav__link">
+        Universes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/both/year/" class="md-nav__link">
+        Years
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          OVERLAY DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          OVERLAY DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          Click to Expand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Click to Expand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/" class="md-nav__link">
+        Overlays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlay_variables/" class="md-nav__link">
+        Shared Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1_3" id="__nav_3_4_1_3_label" tabindex="0">
+          Overlay Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Overlay Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/audio_codec/" class="md-nav__link">
+        Audio Codec
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/commonsense/" class="md-nav__link">
+        Common Sense Age Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/content_rating_uk/" class="md-nav__link">
+        Content Ratings (UK)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/content_rating_us_movie/" class="md-nav__link">
+        Content Ratings (US Movie)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/content_rating_us_show/" class="md-nav__link">
+        Content Ratings (US Show)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/direct_play/" class="md-nav__link">
+        Direct Play Only
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/episode_info/" class="md-nav__link">
+        Episode Info
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/flixpatrol/" class="md-nav__link">
+        FlixPatrol Top
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/language_count/" class="md-nav__link">
+        Audio/Subtitle Language Count
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/languages/" class="md-nav__link">
+        Audio/Subtitle Language Flags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/languages/" class="md-nav__link">
+        Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/mediastinger/" class="md-nav__link">
+        MediaStinger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/network/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/ratings/" class="md-nav__link">
+        Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/resolution/" class="md-nav__link">
+        Resolution/Edition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/ribbon/" class="md-nav__link">
+        Ribbon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/runtimes/" class="md-nav__link">
+        Runtimes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/status/" class="md-nav__link">
+        Status
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/versions/" class="md-nav__link">
+        Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/overlays/video_format/" class="md-nav__link">
+        Video Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          PLAYLIST DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PLAYLIST DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../defaults/playlist/" class="md-nav__link">
+        Playlists
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          CUSTOM FILES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CUSTOM FILES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/filters/" class="md-nav__link">
+        Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/builders.md" class="md-nav__link">
+        Builders Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          PLEX & SMART BUILDERS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          PLEX & SMART BUILDERS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+          Plex Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Plex Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/#plex-all" class="md-nav__link">
+        Plex All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/#plex-watchlist" class="md-nav__link">
+        Plex Watchlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/#plex-pilots" class="md-nav__link">
+        Plex Pilots
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/#plex-collectionless" class="md-nav__link">
+        Plex Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/plex/#plex-search" class="md-nav__link">
+        Plex Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          Smart Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Smart Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/smart/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/smart/#smart-label" class="md-nav__link">
+        Smart Label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/smart/#smart-filter" class="md-nav__link">
+        Smart Filter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          THIRD-PARTY BUILDERS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          THIRD-PARTY BUILDERS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+          TMDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          TMDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-collection" class="md-nav__link">
+        TMDb Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-list" class="md-nav__link">
+        TMDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-actor" class="md-nav__link">
+        TMDb Actor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-crew" class="md-nav__link">
+        TMDb Crew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-director" class="md-nav__link">
+        TMDb Director
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-producer" class="md-nav__link">
+        TMDb Producer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-writer" class="md-nav__link">
+        TMDb Writer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-movie" class="md-nav__link">
+        TMDb Movie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-show" class="md-nav__link">
+        TMDb Show
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-company" class="md-nav__link">
+        TMDb Company
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-network" class="md-nav__link">
+        TMDb Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-keyword" class="md-nav__link">
+        TMDb Keyword
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-popular" class="md-nav__link">
+        TMDb Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-now-playing" class="md-nav__link">
+        TMDb Now Playing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-top-rated" class="md-nav__link">
+        TMDb Top Rated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-upcoming" class="md-nav__link">
+        TMDb Upcoming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-airing-today" class="md-nav__link">
+        TMDb Airing Today
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-on-the-air" class="md-nav__link">
+        TMDb On the Air
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-trending-daily" class="md-nav__link">
+        TMDb Trending Daily
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-trending-weekly" class="md-nav__link">
+        TMDb Trending Weekly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tmdb/#tmdb-discover" class="md-nav__link">
+        TMDb Discover
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+          TVDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          TVDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tvdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tvdb/#tvdb-list" class="md-nav__link">
+        TVDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tvdb/#tvdb-movie" class="md-nav__link">
+        TVDb Movie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tvdb/#tvdb-show" class="md-nav__link">
+        TVDb Show
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3" id="__nav_4_5_3_label" tabindex="0">
+          IMDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          IMDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/imdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/imdb/#imdb-id" class="md-nav__link">
+        IMDb ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/imdb/#imdb-chart" class="md-nav__link">
+        IMDb Chart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/imdb/#imdb-list" class="md-nav__link">
+        IMDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/imdb/#imdb-watchlist" class="md-nav__link">
+        IMDb Watchlist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_4" id="__nav_4_5_4_label" tabindex="0">
+          Trakt Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Trakt Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/#trakt-list" class="md-nav__link">
+        Trakt List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/#trakt-chart" class="md-nav__link">
+        Trakt Chart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/#trakt-userlist" class="md-nav__link">
+        Trakt Userlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/#trakt-recommendations" class="md-nav__link">
+        Trakt Recommendations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/trakt/#trakt-box-office" class="md-nav__link">
+        Trakt Box Office
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_5" id="__nav_4_5_5_label" tabindex="0">
+          Tautulli Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tautulli Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tautulli/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/tautulli/#tautulli-popular-watched" class="md-nav__link">
+        Tautulli Popular/Watched
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_6" id="__nav_4_5_6_label" tabindex="0">
+          Radarr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Radarr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/radarr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/radarr/#radarr-all" class="md-nav__link">
+        Radarr All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/radarr/#radarr-taglist" class="md-nav__link">
+        Radarr Taglist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_7" id="__nav_4_5_7_label" tabindex="0">
+          Sonarr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Sonarr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/sonarr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/sonarr/#sonarr-all" class="md-nav__link">
+        Sonarr All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/sonarr/#sonarr-taglist" class="md-nav__link">
+        Sonarr Taglist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_8" id="__nav_4_5_8_label" tabindex="0">
+          MdbList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          MdbList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/mdblist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/mdblist/#mdblist-list" class="md-nav__link">
+        MdbList List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_9" id="__nav_4_5_9_label" tabindex="0">
+          Letterboxd Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          Letterboxd Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/letterboxd/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/letterboxd/#letterboxd-list" class="md-nav__link">
+        Letterboxd List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_10" id="__nav_4_5_10_label" tabindex="0">
+          ICheckMovies Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_10">
+          <span class="md-nav__icon md-icon"></span>
+          ICheckMovies Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/icheckmovies/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/icheckmovies/#icheckmovies-list" class="md-nav__link">
+        ICheckMovies List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_11" id="__nav_4_5_11_label" tabindex="0">
+          FlixPatrol Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_11">
+          <span class="md-nav__icon md-icon"></span>
+          FlixPatrol Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/flixpatrol/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/flixpatrol/#flixpatrol-top" class="md-nav__link">
+        FlixPatrol Top Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/flixpatrol/#flixpatrol-popular" class="md-nav__link">
+        FlixPatrol Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/flixpatrol/#flixpatrol-demographics" class="md-nav__link">
+        FlixPatrol Demographics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/flixpatrol/#flixpatrol-url" class="md-nav__link">
+        FlixPatrol URL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_12" id="__nav_4_5_12_label" tabindex="0">
+          Reciperr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_12">
+          <span class="md-nav__icon md-icon"></span>
+          Reciperr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/reciperr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/reciperr/#reciperr-list" class="md-nav__link">
+        Reciperr List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_13" id="__nav_4_5_13_label" tabindex="0">
+          StevenLu Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_13">
+          <span class="md-nav__icon md-icon"></span>
+          StevenLu Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/stevenlu/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/stevenlu/#stevenlu-s-popular-movies-list" class="md-nav__link">
+        StevenLu List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_14" id="__nav_4_5_14_label" tabindex="0">
+          AniDB Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_14">
+          <span class="md-nav__icon md-icon"></span>
+          AniDB Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anidb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anidb/#anidb-id" class="md-nav__link">
+        AniDB ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anidb/#anidb-relation" class="md-nav__link">
+        AniDB Relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anidb/#anidb-popular" class="md-nav__link">
+        AniDB Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anidb/#anidb-tag" class="md-nav__link">
+        AniDB Tag
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_15" id="__nav_4_5_15_label" tabindex="0">
+          AniList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_15">
+          <span class="md-nav__icon md-icon"></span>
+          AniList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-top-rated" class="md-nav__link">
+        AniList Top Rated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-anilist-popular" class="md-nav__link">
+        AniList Anilist Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-trending" class="md-nav__link">
+        AniList Trending
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-relations" class="md-nav__link">
+        AniList Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-studio" class="md-nav__link">
+        AniList Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-id" class="md-nav__link">
+        AniList ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-userlist" class="md-nav__link">
+        AniList UserList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/anilist/#anilist-search" class="md-nav__link">
+        AniList Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_16" id="__nav_4_5_16_label" tabindex="0">
+          MyAnimeList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_16">
+          <span class="md-nav__icon md-icon"></span>
+          MyAnimeList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-search" class="md-nav__link">
+        MyAnimeList Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-all" class="md-nav__link">
+        MyAnimeList Top All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-airing" class="md-nav__link">
+        MyAnimeList Top Airing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-upcoming" class="md-nav__link">
+        MyAnimeList Top Upcoming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-tv-series" class="md-nav__link">
+        MyAnimeList Top TV Series
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-movies" class="md-nav__link">
+        MyAnimeList Top Movies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-ova-series" class="md-nav__link">
+        MyAnimeList Top OVA Series
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-top-specials" class="md-nav__link">
+        MyAnimeList Top Specials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-most-popular" class="md-nav__link">
+        MyAnimeList Most Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-most-favorited" class="md-nav__link">
+        MyAnimeList Most Favorited
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-suggested" class="md-nav__link">
+        MyAnimeList Suggested
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-id" class="md-nav__link">
+        MyAnimeList ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-userlist" class="md-nav__link">
+        MyAnimeList UserList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/myanimelist/#myanimelist-seasonal" class="md-nav__link">
+        MyAnimeList Seasonal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          DYNAMIC COLLECTIONS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          DYNAMIC COLLECTIONS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic.md" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          Dynamic Collection Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Dynamic Collection Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_1" id="__nav_4_6_2_1_label" tabindex="0">
+          TMDb Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          TMDb Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#tmdb-collection" class="md-nav__link">
+        TMDb Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#tmdb-popular-people" class="md-nav__link">
+        TMDb Popular People
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#original-language" class="md-nav__link">
+        Original Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#origin-country" class="md-nav__link">
+        Origin Country
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_2" id="__nav_4_6_2_2_label" tabindex="0">
+          Trakt  Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Trakt  Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#trakt-user-lists" class="md-nav__link">
+        Trakt User Lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#trakt-liked-lists" class="md-nav__link">
+        Trakt Liked Lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#trakt-people-lists" class="md-nav__link">
+        Trakt People Lists
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_3" id="__nav_4_6_2_3_label" tabindex="0">
+          Plex Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Plex Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#actor" class="md-nav__link">
+        Actor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#director" class="md-nav__link">
+        Director
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#writer" class="md-nav__link">
+        Writer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#producer" class="md-nav__link">
+        Producer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#genre" class="md-nav__link">
+        Genre
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#album-genre" class="md-nav__link">
+        Album Genre
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#content-rating" class="md-nav__link">
+        Content Rating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#year" class="md-nav__link">
+        Year
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#decade" class="md-nav__link">
+        Decade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#country" class="md-nav__link">
+        Country
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#resolution" class="md-nav__link">
+        Resolution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#subtitle-language" class="md-nav__link">
+        Subtitle Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#audio-language" class="md-nav__link">
+        Audio Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#studio" class="md-nav__link">
+        Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#edition" class="md-nav__link">
+        Edition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#network" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#mood" class="md-nav__link">
+        Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#album-mood" class="md-nav__link">
+        Album Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#track-mood" class="md-nav__link">
+        Track Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#style" class="md-nav__link">
+        Style
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#album-style" class="md-nav__link">
+        Album Style
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_4" id="__nav_4_6_2_4_label" tabindex="0">
+          Other Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Other Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#number" class="md-nav__link">
+        Number
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/dynamic/#custom" class="md-nav__link">
+        Custom
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          SETTINGS & UPDATES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          SETTINGS & UPDATES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/update/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_2" id="__nav_4_7_2_label" tabindex="0">
+          Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Settings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/details/definition/" class="md-nav__link">
+        Definition Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/details/schedule/" class="md-nav__link">
+        Schedule Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/details/arr/" class="md-nav__link">
+        Radarr/Sonarr Definition Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_3" id="__nav_4_7_3_label" tabindex="0">
+          Updates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/details/metadata/" class="md-nav__link">
+        Collection/Playlist Metadata Updates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../builders/details/item_metadata/" class="md-nav__link">
+        Item Metadata Updates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          METADATA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          METADATA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/metadata/movie/" class="md-nav__link">
+        Editing Movie Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/metadata/show/" class="md-nav__link">
+        Editing TV Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../metadata/metadata/music/" class="md-nav__link">
+        Editing Music Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install/guides/formula/" class="md-nav__link">
+        Formula 1 Metadata Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-plex-image-cleanup" class="md-nav__link">
+    Installing Plex Image Cleanup
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Plex Image Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-walkthroughs" class="md-nav__link">
+    Install Walkthroughs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-install-overview" class="md-nav__link">
+    Local Install Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-install-overview" class="md-nav__link">
+    Docker Install Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker Install Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    Docker Run:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    Docker Compose:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    Tips
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-options" class="md-nav__link">
+    Global Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-env-file" class="md-nav__link">
+    Example .env File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-options" class="md-nav__link">
+    Base Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Base Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plex-path" class="md-nav__link">
+    Plex Path
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    Mode
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-from-plex-api" class="md-nav__link">
+    Download From Plex API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-from-local" class="md-nav__link">
+    Copy From Local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-existing" class="md-nav__link">
+    Use Existing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-operations" class="md-nav__link">
+    Other Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#photo-transcoder" class="md-nav__link">
+    Photo Transcoder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-trash" class="md-nav__link">
+    Empty Trash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-bundles" class="md-nav__link">
+    Clean Bundles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-db" class="md-nav__link">
+    Optimize DB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-options" class="md-nav__link">
+    Other Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discord-url" class="md-nav__link">
+    Discord URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeout" class="md-nav__link">
+    Timeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sleep" class="md-nav__link">
+    Sleep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trace" class="md-nav__link">
+    Trace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-requests" class="md-nav__link">
+    Log Requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-schedule" class="md-nav__link">
+    Continuous Schedule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-blocks" class="md-nav__link">
+    Schedule Blocks
+  </a>
+  
+    <nav class="md-nav" aria-label="Schedule Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schedule-block-parts" class="md-nav__link">
+    Schedule Block Parts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-block-example" class="md-nav__link">
+    Schedule Block Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="plex-image-cleanup">Plex Image Cleanup<a class="headerlink" href="#plex-image-cleanup" title="Permanent link">&para;</a></h1>
+<p>Your Plex folders are growing out of control. You use overlays from <a href="https://github.com/meisnate12/Plex-Meta-Manager">Plex Meta Manager</a> (PMM) or upload lots of custom art from <a href="https://github.com/CollinHeist/TitleCardMaker">Title Card Maker</a> (TCM) that you no longer want to use or need to eliminate. You don't want to perform the <a href="https://www.plexopedia.com/plex-media-server/general/plex-dance/">plex dance</a> if you can avoid it. This script will free up gigs of space....</p>
+<p>As well as being able to clean the PhotoTranscoder Directory and running the Plex operations Empty Trash, Clean Bundles, and Optimize DB. </p>
+<p>Special Thanks to <a href="https://github.com/bullmoose20">bullmoose20</a> for the original <a href="https://github.com/bullmoose20/Plex-Stuff#plex-bloat-fix">Plex Bloat Fix</a> (PBF) Script this is based on.</p>
+<p><a class="glightbox" href="../cleanup.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../cleanup.png" /></a></p>
+<p>This image shows which photos would be removed. Red is removed, Green is kept because it is the actively selected poster. The other two come standard from Plex when the posters are retrieved so Plex Meta Manager will not touch those either:</p>
+<h2 id="installing-plex-image-cleanup">Installing Plex Image Cleanup<a class="headerlink" href="#installing-plex-image-cleanup" title="Permanent link">&para;</a></h2>
+<p>Generally, Plex Image Cleanup can be installed in one of two ways:</p>
+<ol>
+<li>Running on a system as a Python script [we will refer to this as a "local" install]</li>
+<li>Running as a Docker container</li>
+</ol>
+<p>GENERALLY SPEAKING, running as a Docker container is simpler, as you won't have to be concerned about installing Python, or support libraries, or any possible system conflicts generated by those actions.</p>
+<p>For this reason, it's generally recommended that you install via Docker rather than directly on the host.</p>
+<p>If you have some specific reason to avoid Docker, or you prefer running it as a Python script for some particular reason, then this general recommendation is not aimed at you.  It's aimed at someone who doesn't have an existing compelling reason to choose one over the other.</p>
+<h3 id="install-walkthroughs">Install Walkthroughs<a class="headerlink" href="#install-walkthroughs" title="Permanent link">&para;</a></h3>
+<p>There are no detailed walkthroughs specifically for Plex Image Cleanup but the process is extremely similar to how you would do it with <a href="https://metamanager.wiki/en/latest/home/installation.html#install-walkthroughs">Plex Meta Manager</a>.</p>
+<h3 id="local-install-overview">Local Install Overview<a class="headerlink" href="#local-install-overview" title="Permanent link">&para;</a></h3>
+<p>Plex Image Cleanup is compatible with Python 3.11. Later versions may function but are untested.</p>
+<p>These are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. </p>
+<ol>
+<li>Clone or <a href="https://github.com/meisnate12/Plex-Image-Cleanup/archive/refs/heads/master.zip">download and unzip</a> the repo.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/meisnate12/Plex-Image-Cleanup
+</code></pre></div>
+2. Install dependencies:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+<ol>
+<li>If the above command fails, run the following command:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--ignore-installed
+</code></pre></div>
+<p>At this point Plex-Image-Cleanup has been installed, and you can verify installation by running:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>plex_image_cleanup.py
+</code></pre></div>
+<h3 id="docker-install-overview">Docker Install Overview<a class="headerlink" href="#docker-install-overview" title="Permanent link">&para;</a></h3>
+<h4 id="docker-run">Docker Run:<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>&lt;PATH_TO_CONFIG&gt;:/config:rw<span class="w"> </span>-v<span class="w"> </span>&lt;PATH_TO_PLEX&gt;:/plex:rw<span class="w"> </span>meisnate12/plex-image-cleanup
+</code></pre></div>
+* The <code>-v &lt;PATH_TO_CONFIG&gt;:/config:rw</code> and <code>-v &lt;PATH_TO_PLEX&gt;:/plex:rw</code> flags mount the location you choose as a persistent volumes to store your files and give access to plex.
+  * Change <code>&lt;PATH_TO_CONFIG&gt;</code> to a folder where your .env and other files are.
+  * Change <code>&lt;PATH_TO_PLEX&gt;</code> to the folder where your Plex Folder is (It contains folders: Cache, Metadata, Plug-in Support).
+  * If your directory has spaces (such as "My Documents"), place quotation marks around your directory pathing as shown here: <code>-v "&lt;PATH_TO_CONFIG&gt;:/config:rw"</code></p>
+<p>Example Docker Run command:</p>
+<p>These docs are assuming you have a basic understanding of Docker concepts.  One place to get familiar with Docker would be the <a href="https://www.docker.com/101-tutorial/">official tutorial</a>.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;X:\Media\Plex Image Cleanup\config:/config:rw&quot;</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;X:\Plex Media Server:/plex:rw&quot;</span><span class="w"> </span>meisnate12/plex-image-cleanup
+</code></pre></div>
+<h4 id="docker-compose">Docker Compose:<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h4>
+<p>Example Docker Compose file:
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2.1&quot;</span>
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">plex-image-cleanup</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meisnate12/plex-image-cleanup</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">plex-image-cleanup</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TZ=TIMEZONE</span><span class="w"> </span><span class="c1">#optional</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/config:/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/plex:/plex</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+</code></pre></div></p>
+<h4 id="dockerfile">Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h4>
+<p>A <code>Dockerfile</code> is included within the GitHub repository for those who require it, although this is only suggested for those with knowledge of dockerfiles. The official Plex Image Cleanup build is available on the <a href="https://hub.docker.com/r/meisnate12/plex-image-cleanup">Dockerhub Website</a>.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>When running Plex Image Cleanup, make sure that you are not running any tools which may touch posters, backgrounds or title card images - namely <a href="https://github.com/meisnate12/Plex-Meta-Manager">Plex Meta Manager</a> or <a href="https://github.com/CollinHeist/TitleCardMaker">TitleCardMaker</a>.</p>
+<p>It is recommended to schedule Plex Image Cleanup after the above tools or Plex's Scheduled Tasks.</p>
+<p>An example schedule would be:
+* 00:00-02:00 - TitleCardMaker
+* 02:00-05:00 - Plex Scheduled Tasks
+* 05:00-07:00 - Plex Meta Manager
+* 07:00-09:00 - Plex Image Cleanup</p>
+<h3 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ensure you have proper permissions to delete/rename or Plex Meta Manager will fail</li>
+<li>For performance purposes, it's recommended to run locally so that accessing the files is not done over a network share</li>
+</ul>
+<h2 id="global-options">Global Options<a class="headerlink" href="#global-options" title="Permanent link">&para;</a></h2>
+<p>Plex Image Cleanup has multiple Global Options to change how it runs these are set in 3 different ways listed in priority order:</p>
+<ol>
+<li>Setting the Environment Variable.</li>
+<li>Adding the Environment Variables to <code>config/.env</code> </li>
+<li><code>example.env</code> is included as an example but is not read by Plex Meta Manager it will only read a file specifically called <code>.env</code>.</li>
+<li>Use the Shell Command when launching.</li>
+</ol>
+<h3 id="example-env-file">Example .env File<a class="headerlink" href="#example-env-file" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>PLEX_PATH=C:\Plex Media Server
+MODE=report
+SCHEDULE=
+PLEX_URL=http://192.168.1.12:32400
+PLEX_TOKEN=123456789
+DISCORD=https://discord.com/api/webhooks/###################/####################################################################
+TIMEOUT=600
+SLEEP=60
+IGNORE_RUNNING=False
+LOCAL_DB=False
+USE_EXISTING=False
+PHOTO_TRANSCODER=False
+EMPTY_TRASH=False
+CLEAN_BUNDLES=False
+OPTIMIZE_DB=False
+TRACE=False
+LOG_REQUESTS=False
+</code></pre></div>
+<h3 id="base-options">Base Options<a class="headerlink" href="#base-options" title="Permanent link">&para;</a></h3>
+<h4 id="plex-path">Plex Path<a class="headerlink" href="#plex-path" title="Permanent link">&para;</a></h4>
+<p>The only required Option is the <code>Plex Path</code> Option which is the Plex Config Folder containing the servers Metadata including <code>Cache</code>, <code>Metadata</code>, and <code>Plug-in Support</code>.</p>
+<p>To set the <code>Plex Path</code> for the run: 
+* <strong>Environment Variable:</strong> <code>PLEX_PATH=C:\Plex Media Server</code>
+* <strong>Shell Command:</strong> <code>-p "C:\Plex Media Server"</code> or <code>--plex "C:\Plex Media Server"</code>
+* Will also check <code>/plex</code> relative to the base directory of the script if neither of the above are specified.</p>
+<h4 id="mode">Mode<a class="headerlink" href="#mode" title="Permanent link">&para;</a></h4>
+<p>How Plex Image Cleanup runs depends on the <code>Mode</code> Option that's currently set for that run.</p>
+<ul>
+<li><code>report</code>: Metadata Directory File changes will be reported but not performed.</li>
+<li><code>move</code>: Metadata Directory Files will be moved to the PIC Restore Directory. (CAN BE RESTORED)</li>
+<li><code>restore</code>: Restores the Metadata Directory Files from the PIC Restore Directory.</li>
+<li><code>clear</code>: Clears out the PIC Restore Directory. (CANNOT BE RESTORED)</li>
+<li><code>remove</code>: Metadata Directory Files will be removed. (CANNOT BE RESTORED)</li>
+<li><code>nothing</code>: Metadata Directory Files will not even be looked at.</li>
+</ul>
+<p>To set the Global <code>Mode</code> for the run: 
+* <strong>Environment Variable:</strong> <code>MODE=remove</code>
+* <strong>Shell Command:</strong> <code>-m remove</code> or <code>--mode remove</code></p>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
+<p>The script needs to query the server's plex database to make sure it doesn't remove actively selected images. </p>
+<h4 id="download-from-plex-api">Download From Plex API<a class="headerlink" href="#download-from-plex-api" title="Permanent link">&para;</a></h4>
+<p>By default, the script will expect to connect to your Plex Server to download the Database using your <code>Plex URL</code> and <code>Plex Token</code> Options (<a href="https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/">Finding a Token</a>).</p>
+<ul>
+<li><strong>Environment Variables:</strong> </li>
+<li><code>PLEX_URL=http://192.168.1.12:32400</code></li>
+<li><code>PLEX_TOKEN=123456789</code></li>
+<li><strong>Shell Commands:</strong> </li>
+<li><code>-u "http://192.168.1.12:32400"</code> or <code>--url "http://192.168.1.12:32400"</code></li>
+<li><code>-t "123456789"</code> or <code>--token "123456789"</code></li>
+</ul>
+<h4 id="copy-from-local">Copy From Local<a class="headerlink" href="#copy-from-local" title="Permanent link">&para;</a></h4>
+<p>Alternatively the database can be copied from your local config folder you supplied in the <a href="#plex-path"><code>Plex Path</code></a> Option by using the <code>Local DB</code> Option. </p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>LOCAL_DB=True</code></li>
+<li><strong>Shell Command:</strong> <code>-l</code> or <code>--local</code></li>
+</ul>
+<p><strong>IMPORTANT! When Copying the Local Database, it is recommended to restart Plex before running this script and to make sure Plex is idle.</strong></p>
+<p>Restarting allows for all temp SQLite files to be written to the primary Plex DB ensuring that all currently selected posters are properly known and preserved.</p>
+<p>The script will not run when the temp SQLite files are found. To ignore this error, use the <code>Ignore Running</code> Option.</p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>IGNORE_RUNNING=True</code> </li>
+<li><strong>Shell Command:</strong> <code>-i</code> or <code>--ignore</code></li>
+</ul>
+<h4 id="use-existing">Use Existing<a class="headerlink" href="#use-existing" title="Permanent link">&para;</a></h4>
+<p>A previously downloaded or copied database can be used if it's less than 2 hours old by using the <code>Use Existing</code> Option. If the database is more than 2 hours old a new one will be downloaded or copied.</p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>USE_EXISTING=True</code></li>
+<li><strong>Shell Command:</strong> <code>-e</code> or <code>--existing</code></li>
+</ul>
+<h3 id="other-operations">Other Operations<a class="headerlink" href="#other-operations" title="Permanent link">&para;</a></h3>
+<p>In addition to cleaning the Plex Metadata Directory for custom images the script can clean out your PhotoTranscoder Directory, Empty Trash, Clean Bundles, and Optimize DB.</p>
+<h4 id="photo-transcoder">Photo Transcoder<a class="headerlink" href="#photo-transcoder" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Environment Variable:</strong> <code>PHOTO_TRANSCODER=True</code></li>
+<li><strong>Shell Command:</strong> <code>-pt</code> or <code>--photo-transcoder</code></li>
+</ul>
+<h4 id="empty-trash">Empty Trash<a class="headerlink" href="#empty-trash" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Environment Variable:</strong> <code>EMPTY_TRASH=True</code></li>
+<li><strong>Shell Command:</strong> <code>-et</code> or <code>--empty-trash</code></li>
+</ul>
+<h4 id="clean-bundles">Clean Bundles<a class="headerlink" href="#clean-bundles" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Environment Variable:</strong> <code>CLEAN_BUNDLES=True</code></li>
+<li><strong>Shell Command:</strong> <code>-cb</code> or <code>--clean-bundles</code></li>
+</ul>
+<h4 id="optimize-db">Optimize DB<a class="headerlink" href="#optimize-db" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Environment Variable:</strong> <code>OPTIMIZE_DB=True</code></li>
+<li><strong>Shell Command:</strong> <code>-od</code> or <code>--optimize-db</code></li>
+</ul>
+<h3 id="other-options">Other Options<a class="headerlink" href="#other-options" title="Permanent link">&para;</a></h3>
+<h4 id="discord-url">Discord URL<a class="headerlink" href="#discord-url" title="Permanent link">&para;</a></h4>
+<p>Discord Webhook URL to send notifications to.</p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>DISCORD=https://discord.com/api/webhooks/###/###</code></li>
+<li><strong>Shell Command:</strong> <code>-d "https://discord.com/api/webhooks/###/###"</code> or <code>--discord "https://discord.com/api/webhooks/###/###"</code></li>
+</ul>
+<h4 id="timeout">Timeout<a class="headerlink" href="#timeout" title="Permanent link">&para;</a></h4>
+<p>Connection Timeout in seconds that's greater than 0.</p>
+<ul>
+<li><strong>Default:</strong> <code>600</code></li>
+<li><strong>Environment Variable:</strong> <code>TIMEOUT=1000</code></li>
+<li><strong>Shell Command:</strong> <code>-ti 1000</code> or <code>--timeout 1000</code></li>
+</ul>
+<h4 id="sleep">Sleep<a class="headerlink" href="#sleep" title="Permanent link">&para;</a></h4>
+<p>Sleep Timer between Empty Trash, Clean Bundles, and Optimize DB in seconds that's greater than 0 .</p>
+<ul>
+<li><strong>Default:</strong> <code>60</code></li>
+<li><strong>Environment Variable:</strong> <code>SLEEP=100</code></li>
+<li><strong>Shell Command:</strong> <code>-s 100</code> or <code>--sleep 100</code></li>
+</ul>
+<h4 id="trace">Trace<a class="headerlink" href="#trace" title="Permanent link">&para;</a></h4>
+<p>Run with extra trace logs.</p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>TRACE=True</code></li>
+<li><strong>Shell Command:</strong> <code>-tr</code> or <code>--trace</code></li>
+</ul>
+<h4 id="log-requests">Log Requests<a class="headerlink" href="#log-requests" title="Permanent link">&para;</a></h4>
+<p>Run with every request and file action logged.</p>
+<ul>
+<li><strong>Environment Variable:</strong> <code>LOG_REQUESTS=True</code></li>
+<li><strong>Shell Command:</strong> <code>-lr</code> or <code>--log-requests</code></li>
+</ul>
+<h3 id="continuous-schedule">Continuous Schedule<a class="headerlink" href="#continuous-schedule" title="Permanent link">&para;</a></h3>
+<p>Plex Image Cleanup can be run either immediately or on a schedule. The default behavior is to run immediately to run using a schedule simply pass in the <code>Schedule</code> Option.</p>
+<p>Add a Schedule Block to the <code>Schedule</code> Option to run Plex Image Cleanup using a continuous schedule.</p>
+<ul>
+<li><strong>Shell Command:</strong> <code>-sc</code> or <code>--schedule "05:00|weekly(sunday)"</code></li>
+<li><strong>Environment Variable:</strong> <code>SCHEDULE="05:00|weekly(sunday)"</code></li>
+</ul>
+<h3 id="schedule-blocks">Schedule Blocks<a class="headerlink" href="#schedule-blocks" title="Permanent link">&para;</a></h3>
+<p>Schedule Blocks define how and when Plex Meta Manager will run.</p>
+<p>Each Schedule Blocks has 2 required parts (<code>time</code> and <code>frequency</code>) and 1 optional part (<code>options</code>) all separated with a <code>|</code>. (Example: <code>time|frequency</code> or <code>time|frequency|options</code>)</p>
+<p>You can have multiple Schedule Blocks separated with a <code>,</code> (<code>time|frequency,time|frequency|options</code>).</p>
+<h4 id="schedule-block-parts">Schedule Block Parts<a class="headerlink" href="#schedule-block-parts" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>time</code>: Time in the day the run will occur.</li>
+<li><strong>Time:</strong> <code>HH:MM</code> 24-hour format</li>
+<li><strong>Examples:</strong> <code>00:00</code>-<code>23:59</code> </li>
+<li><code>frequency</code>: Frequency to schedule the run. </li>
+<li><strong>Frequencies:</strong> <code>daily</code>, <code>weekly(day of week)</code>, or <code>monthly(day of month)</code></li>
+<li><strong>Examples:</strong> <code>weekly(sunday)</code> or <code>monthly(1)</code></li>
+<li><code>options</code>: Options changed for the run in the format <code>option=value</code>, with multiple options separated with a <code>;</code>. </li>
+<li><strong>Options:</strong> <code>mode</code>, <code>photo-transcoder</code>, <code>empty-trash</code>, <code>clean-bundles</code>, or <code>optimize-db</code></li>
+<li><strong>Examples:</strong> <code>mode=nothing</code> or <code>photo-transcoder=true</code></li>
+<li><strong>NOTE: This overrides the currently set global value for just this one scheduled run</strong></li>
+</ul>
+<h3 id="schedule-block-example">Schedule Block Example<a class="headerlink" href="#schedule-block-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>SCHEDULE=08:00|weekly(sunday)|mode=clear,09:00|weekly(sunday)|mode=move,10:00|monthly(1)|mode=nothing;photo-transcoder=true
+</code></pre></div>
+<p>The example above is detailed out below to better explain how it works:</p>
+<ul>
+<li>Run at 8:00 AM on Sundays with the Options: <code>mode: clear</code></li>
+<li><code>08:00|weekly(sunday)|mode=remove</code></li>
+<li><code>time |frequency     |options</code></li>
+<li>Run at 9:00 AM on Sundays with the Options: <code>mode: move</code></li>
+<li><code>09:00|weekly(sunday)|mode=move</code></li>
+<li><code>time |frequency     |options</code></li>
+<li>Run at 10:00 AM on the 1st of each month with the Options: <code>mode: nothing</code> and <code>photo-transcoder: true</code> </li>
+<li><code>10:00|monthly(1)|mode=nothing;photo-transcoder=true</code></li>
+<li><code>time |frequency |options</code></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2023 meisnate12
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs Insiders
+          </a>
+        
+        
+      </div>
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links -->
+<div class="md-social">
+  
+    
+    
+    <a
+      href="https://github.com/sponsors/meisnate12"
+      target="_blank" rel="noopener"
+      title="Donate"
+      class="md-social__link heart"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m47.6 300.4 180.7 168.7c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9l180.7-168.7c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141-45.6-7.6-92 7.3-124.6 39.9l-12 12-12-12c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+    </a>
+  
+    
+    
+    <a
+      href="https://discord.gg/NfH6mGFuAB"
+      target="_blank" rel="noopener"
+      title="Discord"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    <a
+      href="https://github.com/meisnate12/Plex-Meta-Manager"
+      target="_blank" rel="noopener"
+      title="GitHub"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.tabs.link", "content.code.copy", "header.autohide", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

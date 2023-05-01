@@ -1,0 +1,6697 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Plex Meta Manager is an open-source python project allowing you to unlock the potential of your media server.">
+      
+      
+        <meta name="author" content="meisnate12">
+      
+      
+      
+        <link rel="prev" href="../imdb/">
+      
+      
+        <link rel="next" href="../tautulli/">
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Overview - Plex Meta Manager Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#trakt-builders" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Plex Meta Manager Wiki" class="md-header__button md-logo" aria-label="Plex Meta Manager Wiki" data-md-component="logo">
+      
+  <img src="../../assets/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plex Meta Manager Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="green"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_3">
+            
+              <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YozoraXCII/Docs-Test" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        PLEX META MANAGER
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../config/configuration/" class="md-tabs__link">
+        CONFIGURATION FILE
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../defaults/guide/" class="md-tabs__link">
+        DEFAULT FILES
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../templates/" class="md-tabs__link md-tabs__link--active">
+        CUSTOM FILES
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../metadata/metadata/movie/" class="md-tabs__link">
+        METADATA
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Plex Meta Manager Wiki" class="md-nav__button md-logo" aria-label="Plex Meta Manager Wiki" data-md-component="logo">
+      
+  <img src="../../assets/icon.png" alt="logo">
+
+    </a>
+    Plex Meta Manager Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YozoraXCII/Docs-Test" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          PLEX META MANAGER
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          PLEX META MANAGER
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+          INSTALLATION
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          INSTALLATION
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/installation/" class="md-nav__link">
+        Installing PMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+          Installation Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Installation Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/unraid/" class="md-nav__link">
+        unRAID Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/kubernetes/" class="md-nav__link">
+        Kubernetes Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/qnap/" class="md-nav__link">
+        QNAP Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/synology/" class="md-nav__link">
+        Synology Walkthrough
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_2_3" id="__nav_1_2_3_label" tabindex="0">
+          In-Depth Walkthroughs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          In-Depth Walkthroughs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/local/" class="md-nav__link">
+        Local (Win/Mac/Linux)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+          POST-INSTALL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          POST-INSTALL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/environmental/" class="md-nav__link">
+        Run Commands & Env Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/kb/" class="md-nav__link">
+        Knowledgebase / FAQ
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+          MISCELLANEOUS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          MISCELLANEOUS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/ratings/" class="md-nav__link">
+        Plex Ratings Explained
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/scheduling/" class="md-nav__link">
+        Scheduling Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/assets/" class="md-nav__link">
+        Image Asset Directory Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/logs/" class="md-nav__link">
+        Log Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/yaml/" class="md-nav__link">
+        YAML File Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          COMPANION SCRIPTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          COMPANION SCRIPTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/scripts/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/scripts/image-cleanup/" class="md-nav__link">
+        Plex Image Cleanup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/essentials/scripts/overlay-reset/" class="md-nav__link">
+        PMM Overlay Reset
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_6" id="__nav_1_6_label" tabindex="0">
+          USEFUL LINKS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          USEFUL LINKS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://features.metamanager.wiki/" class="md-nav__link">
+        Feature Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/meisnate12/Plex-Meta-Manager/issues" class="md-nav__link">
+        Bugs & Issues
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/meisnate12/Plex-Meta-Manager-Configs" class="md-nav__link">
+        User Configs Repository
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/NfH6mGFuAB" class="md-nav__link">
+        Discord Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/sponsors/meisnate12" class="md-nav__link">
+        Donate/Sponsor PMM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://metamanager.wiki/en/latest/home/acknowledgements.html" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          CONFIGURATION FILE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          CONFIGURATION FILE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/configuration/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          STRUCTURE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          STRUCTURE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/libraries/" class="md-nav__link">
+        Library Attributes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/metadata/" class="md-nav__link">
+        Metadata Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/overlay/" class="md-nav__link">
+        Overlay Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/playlist/" class="md-nav__link">
+        Playlist Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/paths/" class="md-nav__link">
+        Path Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/operations/" class="md-nav__link">
+        Library Operations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/webhooks/" class="md-nav__link">
+        Webhooks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          SERVICES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          SERVICES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/plex/" class="md-nav__link">
+        Plex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/tautulli/" class="md-nav__link">
+        Tautulli
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/radarr/" class="md-nav__link">
+        Radarr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/sonarr/" class="md-nav__link">
+        Sonarr
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          THIRD-PARTY CONNECTORS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          THIRD-PARTY CONNECTORS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/notifiarr/" class="md-nav__link">
+        Notifiarr
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/tmdb/" class="md-nav__link">
+        TMDb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/trakt/" class="md-nav__link">
+        Trakt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/mdblist/" class="md-nav__link">
+        MdbList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/omdb/" class="md-nav__link">
+        OMDb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/anidb/" class="md-nav__link">
+        AniDB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/myanimelist/" class="md-nav__link">
+        MyAnimeList
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          DEFAULT FILES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          DEFAULT FILES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/guide/" class="md-nav__link">
+        Defaults Usage Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/files/" class="md-nav__link">
+        Defaults Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          COLLECTIONS DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          COLLECTIONS DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+          Click to Expand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Click to Expand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/collections/" class="md-nav__link">
+        Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/collection_variables/" class="md-nav__link">
+        Shared Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/separators/" class="md-nav__link">
+        Separators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_4" id="__nav_3_3_1_4_label" tabindex="0">
+          Awards Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Awards Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/separator/" class="md-nav__link">
+        Separator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/oscars/" class="md-nav__link">
+        Academy Awards (Oscars)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/bafta/" class="md-nav__link">
+        British Academy of Film Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/cannes/" class="md-nav__link">
+        Cannes Film Festival Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/choice/" class="md-nav__link">
+        Critics Choice Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/emmy/" class="md-nav__link">
+        Emmy Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/golden/" class="md-nav__link">
+        Golden Globe Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/spirit/" class="md-nav__link">
+        Independent Spirit Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/sundance/" class="md-nav__link">
+        Sundance Film Festival Awards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/award/other/" class="md-nav__link">
+        Other Awards
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_5" id="__nav_3_3_1_5_label" tabindex="0">
+          Charts Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Charts Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/separator/" class="md-nav__link">
+        Separator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/basic/" class="md-nav__link">
+        Basic Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/anilist/" class="md-nav__link">
+        AniList Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/flixpatrol/" class="md-nav__link">
+        Flixpatrol Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/imdb/" class="md-nav__link">
+        IMDb Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/myanimelist/" class="md-nav__link">
+        MyAnimeList Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/tautulli/" class="md-nav__link">
+        Tautulli Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/tmdb/" class="md-nav__link">
+        TMDb Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/trakt/" class="md-nav__link">
+        Trakt Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/chart/other/" class="md-nav__link">
+        Other Charts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_6" id="__nav_3_3_1_6_label" tabindex="0">
+          Movie Library Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Movie Library Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/actor/" class="md-nav__link">
+        Actors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/audio_language/" class="md-nav__link">
+        Audio Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/based/" class="md-nav__link">
+        Based On...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/collectionless/" class="md-nav__link">
+        Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_cs/" class="md-nav__link">
+        Common Sense Media Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_mal/" class="md-nav__link">
+        MyAnimeList Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/content_rating_us/" class="md-nav__link">
+        Content Ratings (US)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_uk/" class="md-nav__link">
+        Content Ratings (UK)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/country/" class="md-nav__link">
+        Countries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/decade/" class="md-nav__link">
+        Decades
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/director/" class="md-nav__link">
+        Directors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/franchise/" class="md-nav__link">
+        Franchises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/genre/" class="md-nav__link">
+        Genres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/producer/" class="md-nav__link">
+        Producers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/resolution/" class="md-nav__link">
+        Resolutions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/seasonal/" class="md-nav__link">
+        Seasonal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/studio/" class="md-nav__link">
+        Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/studio_anime/" class="md-nav__link">
+        Anime Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/subtitle_language/" class="md-nav__link">
+        Subtitle Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/universe/" class="md-nav__link">
+        Universes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/movie/writer/" class="md-nav__link">
+        Writers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/year/" class="md-nav__link">
+        Years
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3_1_7" id="__nav_3_3_1_7_label" tabindex="0">
+          Show Library Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_3_1_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Show Library Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/actor/" class="md-nav__link">
+        Actors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/audio_language/" class="md-nav__link">
+        Audio Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/based/" class="md-nav__link">
+        Based On...
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/collectionless/" class="md-nav__link">
+        Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_cs/" class="md-nav__link">
+        Common Sense Media Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_mal/" class="md-nav__link">
+        MyAnimeList Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/show/content_rating_us/" class="md-nav__link">
+        US Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/content_rating_uk/" class="md-nav__link">
+        UK Content Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/show/country/" class="md-nav__link">
+        Countries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/show/decade/" class="md-nav__link">
+        Decades
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/show/franchise/" class="md-nav__link">
+        Franchises
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/genre/" class="md-nav__link">
+        Genres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/show/network/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/resolution/" class="md-nav__link">
+        Resolutions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/studio/" class="md-nav__link">
+        Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/studio_anime/" class="md-nav__link">
+        Anime Studios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/subtitle_language/" class="md-nav__link">
+        Subtitle Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/universe/" class="md-nav__link">
+        Universes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/both/year/" class="md-nav__link">
+        Years
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          OVERLAY DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          OVERLAY DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          Click to Expand
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Click to Expand
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/" class="md-nav__link">
+        Overlays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlay_variables/" class="md-nav__link">
+        Shared Variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1_3" id="__nav_3_4_1_3_label" tabindex="0">
+          Overlay Defaults
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Overlay Defaults
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/audio_codec/" class="md-nav__link">
+        Audio Codec
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/commonsense/" class="md-nav__link">
+        Common Sense Age Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/content_rating_uk/" class="md-nav__link">
+        Content Ratings (UK)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/content_rating_us_movie/" class="md-nav__link">
+        Content Ratings (US Movie)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/content_rating_us_show/" class="md-nav__link">
+        Content Ratings (US Show)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/direct_play/" class="md-nav__link">
+        Direct Play Only
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/episode_info/" class="md-nav__link">
+        Episode Info
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/flixpatrol/" class="md-nav__link">
+        FlixPatrol Top
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/language_count/" class="md-nav__link">
+        Audio/Subtitle Language Count
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/languages/" class="md-nav__link">
+        Audio/Subtitle Language Flags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/languages/" class="md-nav__link">
+        Languages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/mediastinger/" class="md-nav__link">
+        MediaStinger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/network/" class="md-nav__link">
+        Networks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/ratings/" class="md-nav__link">
+        Ratings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/resolution/" class="md-nav__link">
+        Resolution/Edition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/ribbon/" class="md-nav__link">
+        Ribbon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/runtimes/" class="md-nav__link">
+        Runtimes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/status/" class="md-nav__link">
+        Status
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/streaming/" class="md-nav__link">
+        Streaming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/versions/" class="md-nav__link">
+        Versions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/overlays/video_format/" class="md-nav__link">
+        Video Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          PLAYLIST DEFAULTS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PLAYLIST DEFAULTS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../defaults/playlist/" class="md-nav__link">
+        Playlists
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          CUSTOM FILES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          CUSTOM FILES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../filters/" class="md-nav__link">
+        Filters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builders.md" class="md-nav__link">
+        Builders Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          PLEX & SMART BUILDERS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          PLEX & SMART BUILDERS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+          Plex Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Plex Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/#plex-all" class="md-nav__link">
+        Plex All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/#plex-watchlist" class="md-nav__link">
+        Plex Watchlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/#plex-pilots" class="md-nav__link">
+        Plex Pilots
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/#plex-collectionless" class="md-nav__link">
+        Plex Collectionless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/#plex-search" class="md-nav__link">
+        Plex Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+          Smart Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Smart Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart/#smart-label" class="md-nav__link">
+        Smart Label
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart/#smart-filter" class="md-nav__link">
+        Smart Filter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+          THIRD-PARTY BUILDERS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          THIRD-PARTY BUILDERS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+          TMDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          TMDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-collection" class="md-nav__link">
+        TMDb Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-list" class="md-nav__link">
+        TMDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-actor" class="md-nav__link">
+        TMDb Actor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-crew" class="md-nav__link">
+        TMDb Crew
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-director" class="md-nav__link">
+        TMDb Director
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-producer" class="md-nav__link">
+        TMDb Producer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-writer" class="md-nav__link">
+        TMDb Writer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-movie" class="md-nav__link">
+        TMDb Movie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-show" class="md-nav__link">
+        TMDb Show
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-company" class="md-nav__link">
+        TMDb Company
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-network" class="md-nav__link">
+        TMDb Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-keyword" class="md-nav__link">
+        TMDb Keyword
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-popular" class="md-nav__link">
+        TMDb Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-now-playing" class="md-nav__link">
+        TMDb Now Playing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-top-rated" class="md-nav__link">
+        TMDb Top Rated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-upcoming" class="md-nav__link">
+        TMDb Upcoming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-airing-today" class="md-nav__link">
+        TMDb Airing Today
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-on-the-air" class="md-nav__link">
+        TMDb On the Air
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-trending-daily" class="md-nav__link">
+        TMDb Trending Daily
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-trending-weekly" class="md-nav__link">
+        TMDb Trending Weekly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmdb/#tmdb-discover" class="md-nav__link">
+        TMDb Discover
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+          TVDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          TVDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tvdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tvdb/#tvdb-list" class="md-nav__link">
+        TVDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tvdb/#tvdb-movie" class="md-nav__link">
+        TVDb Movie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tvdb/#tvdb-show" class="md-nav__link">
+        TVDb Show
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_3" id="__nav_4_5_3_label" tabindex="0">
+          IMDb Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          IMDb Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imdb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imdb/#imdb-id" class="md-nav__link">
+        IMDb ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imdb/#imdb-chart" class="md-nav__link">
+        IMDb Chart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imdb/#imdb-list" class="md-nav__link">
+        IMDb List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imdb/#imdb-watchlist" class="md-nav__link">
+        IMDb Watchlist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_4" id="__nav_4_5_4_label" tabindex="0">
+          Trakt Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Trakt Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Overview
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-list" class="md-nav__link">
+    Trakt List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-chart" class="md-nav__link">
+    Trakt Chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-userlist" class="md-nav__link">
+    Trakt Userlist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-recommendations" class="md-nav__link">
+    Trakt Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-box-office" class="md-nav__link">
+    Trakt Box Office
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncing-plex-collections-to-trakt-lists" class="md-nav__link">
+    Syncing Plex Collections to Trakt Lists
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#trakt-list" class="md-nav__link">
+        Trakt List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#trakt-chart" class="md-nav__link">
+        Trakt Chart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#trakt-userlist" class="md-nav__link">
+        Trakt Userlist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#trakt-recommendations" class="md-nav__link">
+        Trakt Recommendations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#trakt-box-office" class="md-nav__link">
+        Trakt Box Office
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_5" id="__nav_4_5_5_label" tabindex="0">
+          Tautulli Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tautulli Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tautulli/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tautulli/#tautulli-popular-watched" class="md-nav__link">
+        Tautulli Popular/Watched
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_6" id="__nav_4_5_6_label" tabindex="0">
+          Radarr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Radarr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radarr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radarr/#radarr-all" class="md-nav__link">
+        Radarr All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radarr/#radarr-taglist" class="md-nav__link">
+        Radarr Taglist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_7" id="__nav_4_5_7_label" tabindex="0">
+          Sonarr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Sonarr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonarr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonarr/#sonarr-all" class="md-nav__link">
+        Sonarr All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonarr/#sonarr-taglist" class="md-nav__link">
+        Sonarr Taglist
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_8" id="__nav_4_5_8_label" tabindex="0">
+          MdbList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          MdbList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdblist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdblist/#mdblist-list" class="md-nav__link">
+        MdbList List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_9" id="__nav_4_5_9_label" tabindex="0">
+          Letterboxd Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          Letterboxd Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../letterboxd/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../letterboxd/#letterboxd-list" class="md-nav__link">
+        Letterboxd List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_10" id="__nav_4_5_10_label" tabindex="0">
+          ICheckMovies Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_10">
+          <span class="md-nav__icon md-icon"></span>
+          ICheckMovies Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../icheckmovies/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../icheckmovies/#icheckmovies-list" class="md-nav__link">
+        ICheckMovies List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_11" id="__nav_4_5_11_label" tabindex="0">
+          FlixPatrol Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_11">
+          <span class="md-nav__icon md-icon"></span>
+          FlixPatrol Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flixpatrol/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flixpatrol/#flixpatrol-top" class="md-nav__link">
+        FlixPatrol Top Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flixpatrol/#flixpatrol-popular" class="md-nav__link">
+        FlixPatrol Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flixpatrol/#flixpatrol-demographics" class="md-nav__link">
+        FlixPatrol Demographics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flixpatrol/#flixpatrol-url" class="md-nav__link">
+        FlixPatrol URL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_12" id="__nav_4_5_12_label" tabindex="0">
+          Reciperr Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_12">
+          <span class="md-nav__icon md-icon"></span>
+          Reciperr Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reciperr/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reciperr/#reciperr-list" class="md-nav__link">
+        Reciperr List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_13" id="__nav_4_5_13_label" tabindex="0">
+          StevenLu Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_13">
+          <span class="md-nav__icon md-icon"></span>
+          StevenLu Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stevenlu/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stevenlu/#stevenlu-s-popular-movies-list" class="md-nav__link">
+        StevenLu List
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_14" id="__nav_4_5_14_label" tabindex="0">
+          AniDB Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_14">
+          <span class="md-nav__icon md-icon"></span>
+          AniDB Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anidb/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anidb/#anidb-id" class="md-nav__link">
+        AniDB ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anidb/#anidb-relation" class="md-nav__link">
+        AniDB Relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anidb/#anidb-popular" class="md-nav__link">
+        AniDB Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anidb/#anidb-tag" class="md-nav__link">
+        AniDB Tag
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_15" id="__nav_4_5_15_label" tabindex="0">
+          AniList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_15">
+          <span class="md-nav__icon md-icon"></span>
+          AniList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-top-rated" class="md-nav__link">
+        AniList Top Rated
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-anilist-popular" class="md-nav__link">
+        AniList Anilist Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-trending" class="md-nav__link">
+        AniList Trending
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-relations" class="md-nav__link">
+        AniList Relations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-studio" class="md-nav__link">
+        AniList Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-id" class="md-nav__link">
+        AniList ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-userlist" class="md-nav__link">
+        AniList UserList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anilist/#anilist-search" class="md-nav__link">
+        AniList Search
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5_16" id="__nav_4_5_16_label" tabindex="0">
+          MyAnimeList Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_5_16">
+          <span class="md-nav__icon md-icon"></span>
+          MyAnimeList Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-search" class="md-nav__link">
+        MyAnimeList Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-all" class="md-nav__link">
+        MyAnimeList Top All
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-airing" class="md-nav__link">
+        MyAnimeList Top Airing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-upcoming" class="md-nav__link">
+        MyAnimeList Top Upcoming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-tv-series" class="md-nav__link">
+        MyAnimeList Top TV Series
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-movies" class="md-nav__link">
+        MyAnimeList Top Movies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-ova-series" class="md-nav__link">
+        MyAnimeList Top OVA Series
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-top-specials" class="md-nav__link">
+        MyAnimeList Top Specials
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-most-popular" class="md-nav__link">
+        MyAnimeList Most Popular
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-most-favorited" class="md-nav__link">
+        MyAnimeList Most Favorited
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-suggested" class="md-nav__link">
+        MyAnimeList Suggested
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-id" class="md-nav__link">
+        MyAnimeList ID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-userlist" class="md-nav__link">
+        MyAnimeList UserList
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../myanimelist/#myanimelist-seasonal" class="md-nav__link">
+        MyAnimeList Seasonal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          DYNAMIC COLLECTIONS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          DYNAMIC COLLECTIONS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic.md" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+          Dynamic Collection Builders
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Dynamic Collection Builders
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_1" id="__nav_4_6_2_1_label" tabindex="0">
+          TMDb Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          TMDb Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#tmdb-collection" class="md-nav__link">
+        TMDb Collection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#tmdb-popular-people" class="md-nav__link">
+        TMDb Popular People
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#original-language" class="md-nav__link">
+        Original Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#origin-country" class="md-nav__link">
+        Origin Country
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_2" id="__nav_4_6_2_2_label" tabindex="0">
+          Trakt  Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Trakt  Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#trakt-user-lists" class="md-nav__link">
+        Trakt User Lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#trakt-liked-lists" class="md-nav__link">
+        Trakt Liked Lists
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#trakt-people-lists" class="md-nav__link">
+        Trakt People Lists
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_3" id="__nav_4_6_2_3_label" tabindex="0">
+          Plex Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Plex Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#actor" class="md-nav__link">
+        Actor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#director" class="md-nav__link">
+        Director
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#writer" class="md-nav__link">
+        Writer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#producer" class="md-nav__link">
+        Producer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#genre" class="md-nav__link">
+        Genre
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#album-genre" class="md-nav__link">
+        Album Genre
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#content-rating" class="md-nav__link">
+        Content Rating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#year" class="md-nav__link">
+        Year
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#decade" class="md-nav__link">
+        Decade
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#country" class="md-nav__link">
+        Country
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#resolution" class="md-nav__link">
+        Resolution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#subtitle-language" class="md-nav__link">
+        Subtitle Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#audio-language" class="md-nav__link">
+        Audio Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#studio" class="md-nav__link">
+        Studio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#edition" class="md-nav__link">
+        Edition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#network" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#mood" class="md-nav__link">
+        Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#album-mood" class="md-nav__link">
+        Album Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#track-mood" class="md-nav__link">
+        Track Mood
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#style" class="md-nav__link">
+        Style
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#album-style" class="md-nav__link">
+        Album Style
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6_2_4" id="__nav_4_6_2_4_label" tabindex="0">
+          Other Dynamic Collections
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_6_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Other Dynamic Collections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#number" class="md-nav__link">
+        Number
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic/#custom" class="md-nav__link">
+        Custom
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          SETTINGS & UPDATES
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          SETTINGS & UPDATES
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/update/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_2" id="__nav_4_7_2_label" tabindex="0">
+          Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Settings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/definition/" class="md-nav__link">
+        Definition Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/schedule/" class="md-nav__link">
+        Schedule Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/arr/" class="md-nav__link">
+        Radarr/Sonarr Definition Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_3" id="__nav_4_7_3_label" tabindex="0">
+          Updates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Updates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/metadata/" class="md-nav__link">
+        Collection/Playlist Metadata Updates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/item_metadata/" class="md-nav__link">
+        Item Metadata Updates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          METADATA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          METADATA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/metadata/movie/" class="md-nav__link">
+        Editing Movie Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/metadata/show/" class="md-nav__link">
+        Editing TV Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metadata/metadata/music/" class="md-nav__link">
+        Editing Music Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pmm/install/guides/formula/" class="md-nav__link">
+        Formula 1 Metadata Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-list" class="md-nav__link">
+    Trakt List
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-chart" class="md-nav__link">
+    Trakt Chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-userlist" class="md-nav__link">
+    Trakt Userlist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-recommendations" class="md-nav__link">
+    Trakt Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trakt-box-office" class="md-nav__link">
+    Trakt Box Office
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syncing-plex-collections-to-trakt-lists" class="md-nav__link">
+    Syncing Plex Collections to Trakt Lists
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="trakt-builders">Trakt Builders<a class="headerlink" href="#trakt-builders" title="Permanent link">&para;</a></h1>
+<p>You can find items using the features of <a href="https://trakt.tv/">Trakt.tv</a> (Trakt). </p>
+<p><a href="../../config/trakt">Configuring Trakt</a> in the config is required for any of these builders.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Attribute</th>
+<th align="left">Description</th>
+<th align="center">Works with Movies</th>
+<th align="center">Works with Shows</th>
+<th align="center">Works with Playlists and Custom Sort</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="#trakt-list"><code>trakt_list</code></a></td>
+<td align="left">Finds every movie/show in the Trakt List</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+</tr>
+<tr>
+<td align="left"><a href="#trakt-list"><code>trakt_list_details</code></a></td>
+<td align="left">Finds every movie/show in the Trakt List and updates the collection summary with the list description</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+</tr>
+<tr>
+<td align="left"><a href="#trakt-chart"><code>trakt_chart</code></a></td>
+<td align="left">Finds the movies/shows in the Trakt Chart</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+</tr>
+<tr>
+<td align="left"><a href="#trakt-userlist"><code>trakt_userlist</code></a></td>
+<td align="left">Finds every movie/show in the Trakt Userlist</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+</tr>
+<tr>
+<td align="left"><a href="#trakt-recommendations"><code>trakt_recommendations</code></a></td>
+<td align="left">Finds the movies/shows in Trakt's Personal Recommendations for your User <a href="https://trakt.docs.apiary.io/#reference/recommendations/movies/get-movie-recommendations">Movies</a>/<a href="https://trakt.docs.apiary.io/#reference/recommendations/shows/get-show-recommendations">Shows</a></td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+<td align="center">&#9989;</td>
+</tr>
+<tr>
+<td align="left"><a href="#trakt-box-office"><code>trakt_boxoffice</code></a></td>
+<td align="left">Finds the 10 movies in Trakt's Top Box Office <a href="https://trakt.tv/movies/boxoffice">Movies</a> list</td>
+<td align="center">&#9989;</td>
+<td align="center">&#10060;</td>
+<td align="center">&#9989;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trakt-list">Trakt List<a class="headerlink" href="#trakt-list" title="Permanent link">&para;</a></h2>
+<p>Finds every item in the Trakt List.</p>
+<p>The expected input is a Trakt List URL. Multiple values are supported only as a list.</p>
+<p>The <code>sync_mode: sync</code> and <code>collection_order: custom</code> Details are recommended since the lists are continuously updated and in a specific order. </p>
+<p><strong>Trakt Lists cannot be sorted through the API, but the list is always returned to the default list order if you own the list.</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Christmas</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_list</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://trakt.tv/users/movistapp/lists/christmas-movies</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://trakt.tv/users/2borno2b/lists/christmas-movies-extravanganza</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Reddit Top 250</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://trakt.tv/users/jay-greene/lists/reddit-top-250-2019-edition</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div></p>
+<ul>
+<li>You can update the collection details with the Trakt List's description by using <code>trakt_list_details</code>.</li>
+<li>You can specify multiple collections in <code>trakt_list_details</code> but it will only use the first one to update the collection summary.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Reddit Top 250</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_list_details</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://trakt.tv/users/jay-greene/lists/reddit-top-250-2019-edition</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<h2 id="trakt-chart">Trakt Chart<a class="headerlink" href="#trakt-chart" title="Permanent link">&para;</a></h2>
+<p>Finds the movies/shows in the Trakt Chart. The options are detailed below.</p>
+<p>The <code>sync_mode: sync</code> and <code>collection_order: custom</code> Details are recommended since the lists are continuously updated and in a specific order.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Attribute</th>
+<th align="left">Description &amp; Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>chart</code></td>
+<td align="left"><strong>Description:</strong> Which Trakt chart to query<br><strong>Values:</strong><table class="clearTable"><tr><td><code>trending</code></td><td>Trakt's Trending <a href="https://trakt.tv/movies/trending">Movies</a>/<a href="https://trakt.tv/shows/trending">Shows</a> list</td></tr><tr><td><code>popular</code></td><td>Trakt's Popular <a href="https://trakt.tv/movies/popular">Movies</a>/<a href="https://trakt.tv/shows/popular">Shows</a> list</td></tr><tr><td><code>recommended</code></td><td>Trakt's Recommended <a href="https://trakt.tv/movies/recommended">Movies</a>/<a href="https://trakt.tv/shows/recommended">Shows</a> list</td></tr><tr><td><code>watched</code></td><td>Trakt's Watched <a href="https://trakt.tv/movies/watched">Movies</a>/<a href="https://trakt.tv/shows/watched">Shows</a> list</td></tr><tr><td><code>collected</code></td><td>Trakt's Collected <a href="https://trakt.tv/movies/collected">Movies</a>/<a href="https://trakt.tv/shows/collected">Shows</a> list</td></tr></table></td>
+</tr>
+<tr>
+<td align="left"><code>time_period</code></td>
+<td align="left"><strong>Description:</strong> Time Period for the chart. Does not work with <code>trending</code> or <code>popular</code> chart types.<br><strong>Default:</strong> <code>weekly</code><br><strong>Values:</strong> <code>daily</code>, <code>weekly</code>, <code>monthly</code>, <code>yearly</code>, or <code>all</code></td>
+</tr>
+<tr>
+<td align="left"><code>limit</code></td>
+<td align="left"><strong>Description:</strong> Don't return more then this number<br><strong>Default:</strong> <code>10</code><br><strong>Values:</strong> Number of Items to query.</td>
+</tr>
+<tr>
+<td align="left"><code>query</code></td>
+<td align="left"><strong>Description:</strong> Search titles and descriptions for this<br><strong>Values:</strong> Any String.</td>
+</tr>
+<tr>
+<td align="left"><code>years</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified years only<br><strong>Values:</strong> 4 digit year or range of 4 digit years. i.e. <code>1950</code> or <code>1950-1959</code></td>
+</tr>
+<tr>
+<td align="left"><code>genres</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified genres only<br><strong>Values:</strong> Comma separated string or list of genres<br><strong>Movie Genres:</strong> <code>action</code>, <code>adventure</code>, <code>animation</code>, <code>anime</code>, <code>comedy</code>, <code>crime</code>, <code>documentary</code>, <code>drama</code>, <code>family</code>, <code>fantasy</code>, <code>history</code>, <code>holiday</code>, <code>horror</code>, <code>music</code>, <code>musical</code>, <code>mystery</code>, <code>none</code>, <code>romance</code>, <code>science-fiction</code>, <code>short</code>, <code>sporting-event</code>, <code>superhero</code>, <code>suspense</code>, <code>thriller</code>, <code>war</code>, <code>western</code><br><strong>Show Genres:</strong> <code>action</code>, <code>adventure</code>, <code>animation</code>, <code>anime</code>, <code>biography</code>, <code>children</code>, <code>comedy</code>, <code>crime</code>, <code>documentary</code>, <code>drama</code>, <code>family</code>, <code>fantasy</code>, <code>game-show</code>, <code>history</code>, <code>holiday</code>, <code>home-and-garden</code>, <code>horror</code>, <code>mini-series</code>, <code>music</code>, <code>musical</code>, <code>mystery</code>, <code>news</code>, <code>none</code>, <code>reality</code>, <code>romance</code>, <code>science-fiction</code>, <code>short</code>, <code>soap</code>, <code>special-interest</code>, <code>sporting-event</code>, <code>superhero</code>, <code>suspense</code>, <code>talk-show</code>, <code>thriller</code>, <code>war</code>, <code>western</code></td>
+</tr>
+<tr>
+<td align="left"><code>languages</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified languages only<br><strong>Values:</strong> Comma separated string or list of languages<br><strong>Movie Languages:</strong> <code>ab</code>, <code>af</code>, <code>ak</code>, <code>sq</code>, <code>am</code>, <code>ar</code>, <code>an</code>, <code>hy</code>, <code>as</code>, <code>av</code>, <code>ay</code>, <code>az</code>, <code>bm</code>, <code>ba</code>, <code>eu</code>, <code>be</code>, <code>bn</code>, <code>bi</code>, <code>nb</code>, <code>bs</code>, <code>bg</code>, <code>my</code>, <code>ca</code>, <code>km</code>, <code>ch</code>, <code>ce</code>, <code>ny</code>, <code>zh</code>, <code>kw</code>, <code>co</code>, <code>cr</code>, <code>hr</code>, <code>cs</code>, <code>da</code>, <code>dv</code>, <code>nl</code>, <code>dz</code>, <code>en</code>, <code>eo</code>, <code>et</code>, <code>fo</code>, <code>fj</code>, <code>fi</code>, <code>fr</code>, <code>ff</code>, <code>gd</code>, <code>gl</code>, <code>lg</code>, <code>ka</code>, <code>de</code>, <code>el</code>, <code>gn</code>, <code>gu</code>, <code>ht</code>, <code>ha</code>, <code>he</code>, <code>hi</code>, <code>hu</code>, <code>is</code>, <code>ig</code>, <code>id</code>, <code>ie</code>, <code>iu</code>, <code>ik</code>, <code>ga</code>, <code>it</code>, <code>ja</code>, <code>jv</code>, <code>kl</code>, <code>kn</code>, <code>ks</code>, <code>kk</code>, <code>rw</code>, <code>ky</code>, <code>kg</code>, <code>ko</code>, <code>ku</code>, <code>lo</code>, <code>la</code>, <code>lv</code>, <code>li</code>, <code>ln</code>, <code>lt</code>, <code>lb</code>, <code>mk</code>, <code>mg</code>, <code>ms</code>, <code>ml</code>, <code>mt</code>, <code>mi</code>, <code>mr</code>, <code>mh</code>, <code>mn</code>, <code>nv</code>, <code>ne</code>, <code>se</code>, <code>no</code>, <code>nn</code>, <code>oc</code>, <code>oj</code>, <code>or</code>, <code>om</code>, <code>os</code>, <code>pi</code>, <code>pa</code>, <code>fa</code>, <code>pl</code>, <code>pt</code>, <code>ps</code>, <code>qu</code>, <code>ro</code>, <code>rm</code>, <code>rn</code>, <code>ru</code>, <code>sm</code>, <code>sg</code>, <code>sa</code>, <code>sc</code>, <code>sr</code>, <code>sn</code>, <code>ii</code>, <code>sd</code>, <code>si</code>, <code>sk</code>, <code>sl</code>, <code>so</code>, <code>st</code>, <code>es</code>, <code>su</code>, <code>sw</code>, <code>ss</code>, <code>sv</code>, <code>tl</code>, <code>ty</code>, <code>tg</code>, <code>ta</code>, <code>tt</code>, <code>te</code>, <code>th</code>, <code>bo</code>, <code>ti</code>, <code>to</code>, <code>ts</code>, <code>tn</code>, <code>tr</code>, <code>tk</code>, <code>tw</code>, <code>ug</code>, <code>uk</code>, <code>ur</code>, <code>uz</code>, <code>vi</code>, <code>cy</code>, <code>fy</code>, <code>wo</code>, <code>xh</code>, <code>yi</code>, <code>yo</code>, <code>za</code>, <code>zu</code><br><strong>Show Languages:</strong> <code>ab</code>, <code>af</code>, <code>sq</code>, <code>am</code>, <code>ar</code>, <code>hy</code>, <code>eu</code>, <code>be</code>, <code>bn</code>, <code>nb</code>, <code>bs</code>, <code>bg</code>, <code>ca</code>, <code>km</code>, <code>zh</code>, <code>hr</code>, <code>cs</code>, <code>da</code>, <code>dv</code>, <code>nl</code>, <code>en</code>, <code>et</code>, <code>fi</code>, <code>fr</code>, <code>gl</code>, <code>ka</code>, <code>de</code>, <code>el</code>, <code>gu</code>, <code>he</code>, <code>hi</code>, <code>hu</code>, <code>is</code>, <code>id</code>, <code>ga</code>, <code>it</code>, <code>ja</code>, <code>kn</code>, <code>ko</code>, <code>lo</code>, <code>la</code>, <code>lv</code>, <code>lt</code>, <code>lb</code>, <code>mk</code>, <code>ms</code>, <code>ml</code>, <code>mt</code>, <code>mi</code>, <code>mr</code>, <code>ne</code>, <code>se</code>, <code>no</code>, <code>nn</code>, <code>pa</code>, <code>fa</code>, <code>pl</code>, <code>pt</code>, <code>ro</code>, <code>ru</code>, <code>sr</code>, <code>si</code>, <code>sk</code>, <code>sl</code>, <code>es</code>, <code>sv</code>, <code>tl</code>, <code>ta</code>, <code>te</code>, <code>th</code>, <code>tr</code>, <code>tw</code>, <code>uk</code>, <code>ur</code>, <code>uz</code>, <code>vi</code>, <code>cy</code></td>
+</tr>
+<tr>
+<td align="left"><code>countries</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified countries only<br><strong>Values:</strong> Comma separated string or list of countries<br><strong>Movie Countries:</strong> <code>af</code>, <code>al</code>, <code>dz</code>, <code>as</code>, <code>ad</code>, <code>ao</code>, <code>ai</code>, <code>aq</code>, <code>ag</code>, <code>ar</code>, <code>am</code>, <code>aw</code>, <code>au</code>, <code>at</code>, <code>az</code>, <code>bs</code>, <code>bh</code>, <code>bd</code>, <code>bb</code>, <code>by</code>, <code>be</code>, <code>bz</code>, <code>bj</code>, <code>bm</code>, <code>bt</code>, <code>bo</code>, <code>ba</code>, <code>bw</code>, <code>bv</code>, <code>br</code>, <code>io</code>, <code>bn</code>, <code>bg</code>, <code>bf</code>, <code>bi</code>, <code>cv</code>, <code>kh</code>, <code>cm</code>, <code>ca</code>, <code>ky</code>, <code>cf</code>, <code>td</code>, <code>cl</code>, <code>cn</code>, <code>cx</code>, <code>co</code>, <code>km</code>, <code>cg</code>, <code>cd</code>, <code>ck</code>, <code>cr</code>, <code>hr</code>, <code>cu</code>, <code>cy</code>, <code>cz</code>, <code>ci</code>, <code>dk</code>, <code>dj</code>, <code>dm</code>, <code>do</code>, <code>ec</code>, <code>eg</code>, <code>sv</code>, <code>gq</code>, <code>er</code>, <code>ee</code>, <code>sz</code>, <code>et</code>, <code>fk</code>, <code>fo</code>, <code>fj</code>, <code>fi</code>, <code>fr</code>, <code>gf</code>, <code>pf</code>, <code>tf</code>, <code>ga</code>, <code>gm</code>, <code>ge</code>, <code>de</code>, <code>gh</code>, <code>gi</code>, <code>gr</code>, <code>gl</code>, <code>gd</code>, <code>gp</code>, <code>gu</code>, <code>gt</code>, <code>gn</code>, <code>gw</code>, <code>gy</code>, <code>ht</code>, <code>va</code>, <code>hn</code>, <code>hk</code>, <code>hu</code>, <code>is</code>, <code>in</code>, <code>id</code>, <code>ir</code>, <code>iq</code>, <code>ie</code>, <code>il</code>, <code>it</code>, <code>jm</code>, <code>jp</code>, <code>jo</code>, <code>kz</code>, <code>ke</code>, <code>ki</code>, <code>kp</code>, <code>kr</code>, <code>kw</code>, <code>kg</code>, <code>la</code>, <code>lv</code>, <code>lb</code>, <code>ls</code>, <code>lr</code>, <code>ly</code>, <code>li</code>, <code>lt</code>, <code>lu</code>, <code>mo</code>, <code>mg</code>, <code>mw</code>, <code>my</code>, <code>mv</code>, <code>ml</code>, <code>mt</code>, <code>mh</code>, <code>mq</code>, <code>mr</code>, <code>mu</code>, <code>yt</code>, <code>mx</code>, <code>md</code>, <code>mc</code>, <code>mn</code>, <code>me</code>, <code>ms</code>, <code>ma</code>, <code>mz</code>, <code>mm</code>, <code>na</code>, <code>nr</code>, <code>np</code>, <code>nl</code>, <code>nc</code>, <code>nz</code>, <code>ni</code>, <code>ne</code>, <code>ng</code>, <code>nf</code>, <code>mk</code>, <code>mp</code>, <code>no</code>, <code>om</code>, <code>pk</code>, <code>pw</code>, <code>ps</code>, <code>pa</code>, <code>pg</code>, <code>py</code>, <code>pe</code>, <code>ph</code>, <code>pn</code>, <code>pl</code>, <code>pt</code>, <code>pr</code>, <code>qa</code>, <code>ro</code>, <code>ru</code>, <code>rw</code>, <code>re</code>, <code>sh</code>, <code>kn</code>, <code>lc</code>, <code>vc</code>, <code>ws</code>, <code>sm</code>, <code>st</code>, <code>sa</code>, <code>sn</code>, <code>rs</code>, <code>sc</code>, <code>sl</code>, <code>sg</code>, <code>sk</code>, <code>si</code>, <code>sb</code>, <code>so</code>, <code>za</code>, <code>ss</code>, <code>es</code>, <code>lk</code>, <code>sd</code>, <code>sr</code>, <code>se</code>, <code>ch</code>, <code>sy</code>, <code>tw</code>, <code>tj</code>, <code>tz</code>, <code>th</code>, <code>tl</code>, <code>tg</code>, <code>tk</code>, <code>to</code>, <code>tt</code>, <code>tn</code>, <code>tr</code>, <code>tm</code>, <code>tc</code>, <code>tv</code>, <code>ug</code>, <code>ua</code>, <code>ae</code>, <code>gb</code>, <code>us</code>, <code>um</code>, <code>uy</code>, <code>uz</code>, <code>vu</code>, <code>ve</code>, <code>vn</code>, <code>vg</code>, <code>vi</code>, <code>wf</code>, <code>eh</code>, <code>ye</code>, <code>zm</code>, <code>zw</code><br><strong>Show Countries:</strong> <code>af</code>, <code>ad</code>, <code>ar</code>, <code>am</code>, <code>au</code>, <code>at</code>, <code>bd</code>, <code>by</code>, <code>be</code>, <code>bz</code>, <code>ba</code>, <code>bw</code>, <code>br</code>, <code>io</code>, <code>bg</code>, <code>kh</code>, <code>ca</code>, <code>td</code>, <code>cl</code>, <code>cn</code>, <code>co</code>, <code>hr</code>, <code>cu</code>, <code>cy</code>, <code>cz</code>, <code>dk</code>, <code>do</code>, <code>ec</code>, <code>eg</code>, <code>ee</code>, <code>sz</code>, <code>fi</code>, <code>fr</code>, <code>ge</code>, <code>de</code>, <code>gr</code>, <code>hn</code>, <code>hk</code>, <code>hu</code>, <code>is</code>, <code>in</code>, <code>id</code>, <code>ir</code>, <code>iq</code>, <code>ie</code>, <code>il</code>, <code>it</code>, <code>jp</code>, <code>jo</code>, <code>kz</code>, <code>kp</code>, <code>kr</code>, <code>kw</code>, <code>la</code>, <code>lv</code>, <code>lb</code>, <code>lt</code>, <code>lu</code>, <code>my</code>, <code>mv</code>, <code>mt</code>, <code>mx</code>, <code>md</code>, <code>mc</code>, <code>me</code>, <code>ma</code>, <code>np</code>, <code>nl</code>, <code>nz</code>, <code>ng</code>, <code>mk</code>, <code>mp</code>, <code>no</code>, <code>pk</code>, <code>pa</code>, <code>py</code>, <code>pe</code>, <code>ph</code>, <code>pl</code>, <code>pt</code>, <code>pr</code>, <code>qa</code>, <code>ro</code>, <code>ru</code>, <code>sa</code>, <code>sn</code>, <code>rs</code>, <code>sg</code>, <code>sk</code>, <code>si</code>, <code>za</code>, <code>es</code>, <code>lk</code>, <code>se</code>, <code>ch</code>, <code>sy</code>, <code>tw</code>, <code>th</code>, <code>tg</code>, <code>tn</code>, <code>tr</code>, <code>ua</code>, <code>ae</code>, <code>gb</code>, <code>us</code>, <code>uy</code>, <code>ve</code>, <code>vn</code></td>
+</tr>
+<tr>
+<td align="left"><code>certifications</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified certifications only<br><strong>Values:</strong> Comma separated string or list of certifications<br><strong>Movie Certifications:</strong> <code>g</code>, <code>pg</code>, <code>pg-13</code>, <code>r</code>, <code>nr</code><br><strong>Show Certifications:</strong> <code>tv-y</code>, <code>tv-y7</code>, <code>tv-g</code>, <code>tv-pg</code>, <code>tv-14</code>, <code>tv-ma</code>, <code>nr</code></td>
+</tr>
+<tr>
+<td align="left"><code>runtimes</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified runtime range<br><strong>Values:</strong> range of int i.e. <code>0-60</code></td>
+</tr>
+<tr>
+<td align="left"><code>ratings</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified rating range<br><strong>Values:</strong>  range of int i.e. <code>80-100</code></td>
+</tr>
+<tr>
+<td align="left"><code>networks</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified networks only <strong>Only works with shows</strong><br><strong>Values:</strong> Comma separated string or list of networks</td>
+</tr>
+<tr>
+<td align="left"><code>status</code></td>
+<td align="left"><strong>Description:</strong> Search for the specified status only <strong>Only works with shows</strong><br><strong>Values:</strong> Comma separated string or list of statuses<br><strong>Status:</strong> <code>returning</code>, <code>production</code>, <code>planned</code>, <code>canceled</code>, <code>ended</code></td>
+</tr>
+</tbody>
+</table>
+<p>These are the links to the trakt charts that is looked at by time period.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Time Period</th>
+<th align="center">Collected</th>
+<th align="center">Recommended</th>
+<th align="center">Watched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Daily</td>
+<td align="center"><a href="https://trakt.tv/movies/collected/daily">Movies</a>/<a href="https://trakt.tv/shows/collected/daily">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/recommended/daily">Movies</a>/<a href="https://trakt.tv/shows/recommended/daily">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/watched/daily">Movies</a>/<a href="https://trakt.tv/shows/watched/daily">Shows</a></td>
+</tr>
+<tr>
+<td align="left">Weekly</td>
+<td align="center"><a href="https://trakt.tv/movies/collected/weekly">Movies</a>/<a href="https://trakt.tv/shows/collected/weekly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/recommended/weekly">Movies</a>/<a href="https://trakt.tv/shows/recommended/weekly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/watched/weekly">Movies</a>/<a href="https://trakt.tv/shows/watched/weekly">Shows</a></td>
+</tr>
+<tr>
+<td align="left">Monthly</td>
+<td align="center"><a href="https://trakt.tv/movies/collected/monthly">Movies</a>/<a href="https://trakt.tv/shows/collected/monthly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/recommended/monthly">Movies</a>/<a href="https://trakt.tv/shows/recommended/monthly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/watched/monthly">Movies</a>/<a href="https://trakt.tv/shows/watched/monthly">Shows</a></td>
+</tr>
+<tr>
+<td align="left">Yearly</td>
+<td align="center"><a href="https://trakt.tv/movies/collected/yearly">Movies</a>/<a href="https://trakt.tv/shows/collected/yearly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/recommended/yearly">Movies</a>/<a href="https://trakt.tv/shows/recommended/yearly">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/watched/yearly">Movies</a>/<a href="https://trakt.tv/shows/watched/yearly">Shows</a></td>
+</tr>
+<tr>
+<td align="left">All-Time</td>
+<td align="center"><a href="https://trakt.tv/movies/collected/all">Movies</a>/<a href="https://trakt.tv/shows/collected/all">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/recommended/all">Movies</a>/<a href="https://trakt.tv/shows/recommended/all">Shows</a></td>
+<td align="center"><a href="https://trakt.tv/movies/watched/all">Movies</a>/<a href="https://trakt.tv/shows/watched/all">Shows</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Trending</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_chart</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trending</span>
+<span class="w">      </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<p>You can use multiple charts in one builder using a list.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Trending &amp; Popular</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_chart</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trending</span>
+<span class="w">        </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">popular</span>
+<span class="w">        </span><span class="nt">limit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<h2 id="trakt-userlist">Trakt Userlist<a class="headerlink" href="#trakt-userlist" title="Permanent link">&para;</a></h2>
+<p>Finds every movie/show in the Trakt Userlist.</p>
+<p>The <code>sync_mode: sync</code> and <code>collection_order: custom</code> Details are recommended since the lists are continuously updated and in a specific order.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Attribute</th>
+<th align="left">Description &amp; Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>userlist</code></td>
+<td align="left"><strong>Description:</strong> Which Trakt userlist to query<br><strong>Values:</strong><table class="clearTable"><tr><td><code>watchlist</code></td><td>Trakt User's Watchlist</td></tr><tr><td><code>recommendations</code></td><td>Trakt User's Personal Recommendations list</td></tr><tr><td><code>watched</code></td><td>Trakt User's Personal Watched list</td></tr><tr><td><code>collected</code></td><td>Trakt User's Personal Collected list</td></tr></table></td>
+</tr>
+<tr>
+<td align="left"><code>user</code></td>
+<td align="left"><strong>Description:</strong> The User who's user lists you want to query.<br><strong>Default:</strong> <code>me</code><br><strong>Values:</strong> Username of User or <code>me</code> for the authenticated user.</td>
+</tr>
+<tr>
+<td align="left"><code>sort_by</code></td>
+<td align="left"><strong>Description:</strong> How to sort the results<br><strong>Default:</strong> <code>rank</code><br><strong>Values:</strong> <code>rank</code>, <code>added</code>, <code>released</code>, <code>title</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Watchlist</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_userlist</span><span class="p">:</span><span class="w"> </span>
+<span class="w">      </span><span class="nt">userlist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">watchlist</span>
+<span class="w">      </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span>
+<span class="w">      </span><span class="nt">sort_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">released</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<p>You can use multiple charts in one builder using a list.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Watchlist</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_userlist</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">userlist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">watched</span>
+<span class="w">        </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">userlist</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">collected</span>
+<span class="w">        </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<h2 id="trakt-recommendations">Trakt Recommendations<a class="headerlink" href="#trakt-recommendations" title="Permanent link">&para;</a></h2>
+<p>Finds the movies/shows in Trakt's Recommendations for <a href="https://trakt.docs.apiary.io/#reference/recommendations/movies/get-movie-recommendations">Movies</a>/<a href="https://trakt.docs.apiary.io/#reference/recommendations/shows/get-show-recommendations">Shows</a></p>
+<p>The expected input is a single integer value of how many movies/shows to query. </p>
+<p>The <code>sync_mode: sync</code> and <code>collection_order: custom</code> Details are recommended since the lists are continuously updated and in a specific order. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Recommendations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_recommendations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<h2 id="trakt-box-office">Trakt Box Office<a class="headerlink" href="#trakt-box-office" title="Permanent link">&para;</a></h2>
+<p>Finds the 10 movies in Trakt's Top Box Office <a href="https://trakt.tv/movies/boxoffice">Movies</a> list.</p>
+<p>The expected input is true. </p>
+<p>The <code>sync_mode: sync</code> and <code>collection_order: custom</code> Details are recommended since the lists are continuously updated and in a specific order. </p>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Trakt Collected</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">trakt_boxoffice</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">collection_order</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom</span>
+<span class="w">    </span><span class="nt">sync_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sync</span>
+</code></pre></div>
+<h2 id="syncing-plex-collections-to-trakt-lists">Syncing Plex Collections to Trakt Lists<a class="headerlink" href="#syncing-plex-collections-to-trakt-lists" title="Permanent link">&para;</a></h2>
+<p>A combination of PMM settings/attributes can be utilized to create a collection via PMM and then sync them to a blank or existing Trakt List.</p>
+<p>NOTE: You must either create an empty Trakt list or specify an existing Trakt list which you have write access to.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">collections</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">My Favouite Movies</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">sync_to_trakt_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myfilms</span>
+<span class="w">    </span><span class="c1"># trakt_list: https://trakt.tv/users/plexmetamanager/lists/myfilms  OPTIONAL TWO-WAY SYNC</span>
+<span class="w">    </span><span class="nt">plex_search</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">any</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">rating.gte</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8</span>
+<span class="w">        </span><span class="nt">sort_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">user_rating.desc</span>
+</code></pre></div>
+<p>In this example, PMM will generate a Plex collection with any films that I have rated 8.0 or above (using the <code>plex_search</code>). The <code>sync_to_trakt_list</code> will take those films and then sync them to my <code>myfilms</code> Trakt list.</p>
+<p>I can optionally also enable the <code>trakt_list</code> to create a two-way sync between Plex and Trakt. This allows me to add films to the Trakt list that I want in my Plex collection, and then sync them to Plex.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2023 meisnate12
+          </div>
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs Insiders
+          </a>
+        
+        
+      </div>
+      <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links -->
+<div class="md-social">
+  
+    
+    
+    <a
+      href="https://github.com/sponsors/meisnate12"
+      target="_blank" rel="noopener"
+      title="Donate"
+      class="md-social__link heart"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m47.6 300.4 180.7 168.7c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9l180.7-168.7c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141-45.6-7.6-92 7.3-124.6 39.9l-12 12-12-12c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+    </a>
+  
+    
+    
+    <a
+      href="https://discord.gg/NfH6mGFuAB"
+      target="_blank" rel="noopener"
+      title="Discord"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg>
+    </a>
+  
+    
+    
+    <a
+      href="https://github.com/meisnate12/Plex-Meta-Manager"
+      target="_blank" rel="noopener"
+      title="GitHub"
+      class="md-social__link"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.tabs.link", "content.code.copy", "header.autohide", "navigation.footer", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.instant", "navigation.prune", "toc.follow", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
