@@ -1,5 +1,5 @@
 
-# ![Logo](assets/logo.png){ width="900" }
+# ![Logo](assets/logo.png#only-dark){ width="900" } ![Logo](assets/logo-dark.png#only-light){ width="900" }
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/meisnate12/Plex-Meta-Manager?style=plastic)](https://github.com/meisnate12/Plex-Meta-Manager/releases)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/meisnate12/plex-meta-manager?label=docker&sort=semver&style=plastic)](https://hub.docker.com/r/meisnate12/plex-meta-manager)
