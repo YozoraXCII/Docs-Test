@@ -53,8 +53,9 @@ Finally, this walkthrough is intended to give you a basic grounding in how to ge
 
 ### Prepare a small test library [optional]
 
-   ```{include} wt/wt-test-library.md
-   ```
+{%
+   include-markdown "wt/wt-test-library.md"
+%}
 
 ### Starting up your terminal.
 
@@ -276,8 +277,10 @@ We'll create it here so the error doesn't show up later.
 
 ### Setting up the initial config file
 
-   ```{include} wt/wt-01-basic-config.md
-   ```
+{%
+   include-markdown "wt/wt-01-basic-config.md"
+%}
+
 
 #### Editing the config template
 
@@ -307,85 +310,121 @@ First, make a copy of the template:
 
 Now open the copy in an editor:
 
-   ```{include} wt/wt-editor.md
-   ```
+{%
+   include-markdown "wt/wt-editor.md"
+%}
+
    
-   ```{include} wt/wt-02-config-bad-library.md
-   ```
+{%
+   include-markdown "wt/wt-02-config-bad-library.md"
+%}
+
 
 #### Testing the config file
 
 Save the file:
 
-   ```{include} wt/wt-save.md
-   ```
+{%
+   include-markdown "wt/wt-save.md"
+%}
+
 
 Then run Plex Meta Manager again:
 
-   ```{include} wt/wt-run-docker.md
-   ```
+{%
+   include-markdown "wt/wt-run-docker.md"
+%}
+
    
-   ```{include} wt/wt-03-lib-err-and-fix.md
-   ```
+{%
+   include-markdown "wt/wt-03-lib-err-and-fix.md"
+%}
+
 
 ### Creating a few sample collections.
    
-   ```{include} wt/wt-04-default-intro.md
-   ```
+{%
+   include-markdown "wt/wt-04-default-intro.md"
+%}
+
 
 So let's run Plex Meta Manager and see this happen:
 
-   ```{include} wt/wt-run-docker.md
-   ```
+{%
+   include-markdown "wt/wt-run-docker.md"
+%}
+
    
-   ```{include} wt/wt-04b-default-after.md
-   ```
+{%
+   include-markdown "wt/wt-04b-default-after.md"
+%}
+
 
 ### Setting up a metadata file and creating a few sample collections.
    
-   ```{include} wt/wt-05-local-file.md
-   ```
+{%
+   include-markdown "wt/wt-05-local-file.md"
+%}
+
 
 Save the file:
 
-   ```{include} wt/wt-save.md
-   ```
+{%
+   include-markdown "wt/wt-save.md"
+%}
+
 
 Then run Plex Meta Manager again:
 
-   ```{include} wt/wt-run-docker.md
-   ```
+{%
+   include-markdown "wt/wt-run-docker.md"
+%}
+
    
-   ```{include} wt/wt-06-local-after.md
-   ```
+{%
+   include-markdown "wt/wt-06-local-after.md"
+%}
+
 
 ### Adding Overlays to movies.
 
-   ```{include} wt/wt-07-overlay-add.md
-   ```
+{%
+   include-markdown "wt/wt-07-overlay-add.md"
+%}
+
 
 Save the file:
 
-   ```{include} wt/wt-save.md
-   ```
+{%
+   include-markdown "wt/wt-save.md"
+%}
+
 
 Then run Plex Meta Manager again:
 
-   ```{include} wt/wt-run-docker.md
-   ```
+{%
+   include-markdown "wt/wt-run-docker.md"
+%}
+
    
-   ```{include} wt/wt-08-overlay-after.md
-   ```
+{%
+   include-markdown "wt/wt-08-overlay-after.md"
+%}
+
    
-   ```{include} wt/wt-09-next-steps.md
-   ```
+{%
+   include-markdown "wt/wt-09-next-steps.md"
+%}
+
 
 ## Other Topics
 
 ### Scheduling
 
-   ```{include} wt/wt-10-scheduling.md
-   ```
+{%
+   include-markdown "wt/wt-10-scheduling.md"
+%}
+
 
 ### I want to use the develop branch
 

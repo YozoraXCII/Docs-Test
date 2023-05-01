@@ -38,8 +38,10 @@ collections:
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+{%
+   include-markdown "wt-save.md"
+%}
+
 
 Next, add a reference to this file to your config file.
 

@@ -4,8 +4,10 @@ There are many Default Overlay Files built into PMM itself which offer an easy-t
 
 This is the simplest way to create Overlays using Plex Meta Manager.
 
-```{include} overlay_list.md
-```
+{%
+   include-markdown "overlay_list.md"
+%}
+
 
 ## Configurations
 
@@ -232,5 +234,6 @@ Each file has a page on the wiki showing the available `template_variables` for 
 
 ### Examples
 
-```{include} example.md
-```
+{%
+   include-markdown "example.md"
+%}

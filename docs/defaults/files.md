@@ -2,11 +2,14 @@
 
 The below table outlines the available Defaults files which can be called via `metadata_path` (for Collections), `overlay_path` (for Overlays) and `playlist_files` (for Playlists).
 
-```{include} collection_list.md
-```
+{%
+   include-markdown "collection_list.md"
+%}
 
-```{include} overlay_list.md
-```
+{%
+   include-markdown "overlay_list.md"
+%}
+
 
 ## Playlists
 

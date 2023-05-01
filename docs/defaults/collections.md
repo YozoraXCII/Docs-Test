@@ -4,8 +4,10 @@ There are many Default Metadata Files built into PMM itself which offer an easy-
 
 This is the simplest way to create Collections using Plex Meta Manager.
 
-```{include} collection_list.md
-```
+{%
+   include-markdown "collection_list.md"
+%}
+
 
 ## Configurations
 
@@ -186,5 +188,6 @@ libraries:
           use_separator: false
 ```
 
-```{include} example.md
-```
+{%
+   include-markdown "example.md"
+%}

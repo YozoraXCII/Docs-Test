@@ -13,8 +13,10 @@ Supported Library Types: Movie
 | `Producer Collections`                             | `separator`                                        | [Separator Collection](../separators) to denote the Section of Collections. |
 | `<<producer_name>>`<br>**Example:** `Frank Welker` | `<<producer_name>>`<br>**Example:** `Frank Welker` | Collection of Movies by th Producer.                                        |
 
-```{include} ../people.md
-```
+{%
+   include-markdown "../people.md"
+%}
+
 
 ## Config
 

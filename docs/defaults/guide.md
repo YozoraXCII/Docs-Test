@@ -62,5 +62,6 @@ Each file has a page on the wiki showing the available `template_variables` for 
 
 **In addition to the defined `template_variables` almost all default Metadata and Overlay files have access to their respective [Metadata](collection_variables)/[Overlay](overlay_variables.md) Shared Variables.**
 
-```{include} example.md
-```
+{%
+   include-markdown "example.md"
+%}
