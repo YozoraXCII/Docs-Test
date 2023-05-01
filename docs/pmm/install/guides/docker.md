@@ -9,15 +9,16 @@ This article will walk you through getting Plex Meta Manager set up and running 
 5. Creating a docker container that will keep running in the background
 
 The specific steps you will be taking:
+
 1. Verify that Docker is installed and install it if not
 2. Use `docker` to retrieve the Plex Meta Manager Docker image
 3. Create a directory for your config files and learn how to tell Docker to use it
 4. Gather two things that Plex Meta Manager requires:
-   1. TMDb API Key
-   2. Plex URL and Token
+    - TMDb API Key
+    - Plex URL and Token
 5. Then, iteratively:
-   1. use `docker` to run the image
-   2. use a text editor to modify a couple of text files until you have a working config file and a single working metadata file.
+    - use `docker` to run the image
+    - use a text editor to modify a couple of text files until you have a working config file and a single working metadata file.
 
 Note that running a Docker container is inherently a pretty technical process.  If you are unable or unwilling to learn the rudiments of using Docker, this may not be the tool for you.
 
@@ -28,13 +29,15 @@ Finally, this walkthrough is intended to give you a basic grounding in how to ge
 
 ## Prerequisites.
 
-Anywhere you see
+???+ info
 
-```
-something like this
-```
+    Nearly anywhere you see
+    
+    ```
+    something like this
+    ```
 
-That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).
+   That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).
 
 **IMPORTANT NOTES:**
 
@@ -50,30 +53,30 @@ That’s a command you’re going to type or paste into your terminal (OSX or Li
 
 ### Prepare a small test library [optional]
 
-```{include} wt/wt-test-library.md
-```
+   ```{include} wt/wt-test-library.md
+   ```
 
 ### Starting up your terminal.
 
 Since most of this is typing commands into a terminal, you'll need to have a terminal open.
 
-````{tab} Linux
-<br/>
-If your Linux system is remote to your computer, connect to it via SSH.  That SSH session is the terminal you will be using, so leave it open.
+=== ":fontawesome-brands-linux: Linux"
 
-If you are running this on a desktop Linux machine, start up the Terminal application.  That window will be the terminal you will type commands into throughout this walkthrough, so leave it open.
-<br/>
-````
-````{tab} OS X:
-Open the Terminal app; this window will be the place you type commands throughout this walkthrough, so leave it open.  The Terminal app is in Applications -> Utilities.
+      If your Linux system is remote to your computer, connect to it via SSH.  That SSH session is the terminal you will be using, so leave it open.
+   
+      If you are running this on a desktop Linux machine, start up the Terminal application.  That window will be the terminal you will type commands into throughout this walkthrough, so leave it open.
 
-You can also use iTerm or some other terminal app if you wish.  If you don't know what that means, use Terminal.
-<br/>
-````
-````{tab} Windows:
-Use the Start menu to open PowerShell.  This will be the window into which you type commands throughout this walkthrough, so leave it open.
-<br/>
-````
+=== ":fontawesome-brands-apple: macOS"
+   
+      Open the Terminal app; this window will be the place you type commands throughout this walkthrough, so leave it open.  The Terminal app is in Applications -> Utilities.
+   
+      You can also use iTerm or some other terminal app if you wish.  If you don't know what that means, use Terminal.
+
+=== ":fontawesome-brands-windows: Windows"
+
+      Use the Start menu to open PowerShell.  This will be the window into which you type commands throughout this walkthrough, so leave it open.
+
+
 
 ### Installing Docker.
 
@@ -166,57 +169,65 @@ pwd
 
 This will display a full path:
 
-````{tab} Linux
-```
-/home/YOURUSERNAME/plex-meta-manager
-```
-````
-````{tab} OS X
-```
-/Users/YOURUSERNAME/plex-meta-manager
-```
-````
-````{tab} Windows
-```
-C:\Users\YOURUSERNAME\plex-meta-manager
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+      ```
+      /home/YOURUSERNAME/plex-meta-manager
+      ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+      ```
+      /Users/YOURUSERNAME/plex-meta-manager
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      ```
+      C:\Users\YOURUSERNAME\plex-meta-manager
+      ```
 
 Add "config" onto the end of that to get the host path to your config directory, for example:
 
-````{tab} Linux
-```
-/home/YOURUSERNAME/plex-meta-manager/config
-```
-````
-````{tab} OS X
-```
-/Users/YOURUSERNAME/plex-meta-manager/config
-```
-````
-````{tab} Windows
-```
-C:\Users\YOURUSERNAME\plex-meta-manager\config
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+      ```
+      /home/YOURUSERNAME/plex-meta-manager/config
+      ```
+
+=== ":fontawesome-brands-apple: macOS"
+   
+      ```
+      /Users/YOURUSERNAME/plex-meta-manager/config
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      ```
+      C:\Users\YOURUSERNAME\plex-meta-manager\config
+      ```
+
 
 You'll need to add this to the docker command every time you run it, like this:
 
-````{tab} Linux
-```
-docker run --rm -it -v "/home/YOURUSERNAME/plex-meta-manager/config:/config:rw" meisnate12/plex-meta-manager
-```
-````
-````{tab} OS X
-```
-docker run --rm -it -v "/Users/YOURUSERNAME/plex-meta-manager/config:/config:rw" meisnate12/plex-meta-manager
-```
-````
-````{tab} Windows
-```
-docker run --rm -it -v "C:\Users\YOURUSERNAME\plex-meta-manager\config:/config:rw" meisnate12/plex-meta-manager
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+      ```
+      docker run --rm -it -v "/home/YOURUSERNAME/plex-meta-manager/config:/config:rw" meisnate12/plex-meta-manager
+      ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+      ```
+      docker run --rm -it -v "/Users/YOURUSERNAME/plex-meta-manager/config:/config:rw" meisnate12/plex-meta-manager
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      ```
+      docker run --rm -it -v "C:\Users\YOURUSERNAME\plex-meta-manager\config:/config:rw" meisnate12/plex-meta-manager
+      ```
+
 
 If you run that command now it will display a similar error to before, but without all the image loading:
 
@@ -241,136 +252,140 @@ The default config file contains a reference to a directory that will show an er
 
 We'll create it here so the error doesn't show up later.
 
-````{tab} Linux
-[type this into your terminal]
-```
-mkdir config/assets
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-mkdir config/assets
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-mkdir config\assets
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+   
+      [type this into your terminal]
+      ```
+      mkdir config/assets
+      ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+      [type this into your terminal]
+      ```
+      mkdir config/assets
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      [type this into your terminal]
+      ```
+      mkdir config\assets
+      ```
+
 
 ### Setting up the initial config file
 
-```{include} wt/wt-01-basic-config.md
-```
+   ```{include} wt/wt-01-basic-config.md
+   ```
 
 #### Editing the config template
 
 First, make a copy of the template:
 
-````{tab} Linux
-Get a copy of the template to edit [type this into your terminal]:
-```
-curl -fLvo config/config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
-```
-````
-````{tab} OS X
-Get a copy of the template to edit [type this into your terminal]:
-```
-curl -fLvo config/config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
-```
-````
-````{tab} Windows
-Go to [this URL](https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template) using a web browser; choose the "Save" command, then save the file at:
-```
-C:\Users\YOURUSERNAME\plex-meta-manager\config\config.yml
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+   
+      Get a copy of the template to edit [type this into your terminal]:
+      ```
+      curl -fLvo config/config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
+      ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+      Get a copy of the template to edit [type this into your terminal]:
+      ```
+      curl -fLvo config/config.yml https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      Go to [this URL](https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/config/config.yml.template) using a web browser; choose the "Save" command, then save the file at:
+      ```
+      C:\Users\YOURUSERNAME\plex-meta-manager\config\config.yml
+      ```
+
 
 Now open the copy in an editor:
 
-```{include} wt/wt-editor.md
-```
-
-```{include} wt/wt-02-config-bad-library.md
-```
+   ```{include} wt/wt-editor.md
+   ```
+   
+   ```{include} wt/wt-02-config-bad-library.md
+   ```
 
 #### Testing the config file
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+   ```{include} wt/wt-save.md
+   ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-docker.md
-```
-
-```{include} wt/wt-03-lib-err-and-fix.md
-```
-
+   ```{include} wt/wt-run-docker.md
+   ```
+   
+   ```{include} wt/wt-03-lib-err-and-fix.md
+   ```
 
 ### Creating a few sample collections.
-
-```{include} wt/wt-04-default-intro.md
-```
+   
+   ```{include} wt/wt-04-default-intro.md
+   ```
 
 So let's run Plex Meta Manager and see this happen:
 
-
-```{include} wt/wt-run-docker.md
-```
-
-```{include} wt/wt-04b-default-after.md
-```
+   ```{include} wt/wt-run-docker.md
+   ```
+   
+   ```{include} wt/wt-04b-default-after.md
+   ```
 
 ### Setting up a metadata file and creating a few sample collections.
-
-```{include} wt/wt-05-local-file.md
-```
+   
+   ```{include} wt/wt-05-local-file.md
+   ```
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+   ```{include} wt/wt-save.md
+   ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-docker.md
-```
-
-```{include} wt/wt-06-local-after.md
-```
+   ```{include} wt/wt-run-docker.md
+   ```
+   
+   ```{include} wt/wt-06-local-after.md
+   ```
 
 ### Adding Overlays to movies.
 
-```{include} wt/wt-07-overlay-add.md
-```
+   ```{include} wt/wt-07-overlay-add.md
+   ```
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+   ```{include} wt/wt-save.md
+   ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-docker.md
-```
-
-```{include} wt/wt-08-overlay-after.md
-```
-
-```{include} wt/wt-09-next-steps.md
-```
+   ```{include} wt/wt-run-docker.md
+   ```
+   
+   ```{include} wt/wt-08-overlay-after.md
+   ```
+   
+   ```{include} wt/wt-09-next-steps.md
+   ```
 
 ## Other Topics
 
 ### Scheduling
 
-```{include} wt/wt-10-scheduling.md
-```
+   ```{include} wt/wt-10-scheduling.md
+   ```
 
 ### I want to use the develop branch
 

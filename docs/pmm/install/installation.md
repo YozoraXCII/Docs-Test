@@ -32,7 +32,9 @@ If you are using unRAID, Kubernetes, QNAP, or Synology refer to the following ba
 
 Plex Meta Manager is compatible with Python 3.7 through 3.11. Later versions may function but are untested.
 
-These are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. For a detailed step-by-step walkthrough, refer to the [Local Walkthrough](guides/local) guide.
+???+ tip 
+  
+    These are high-level steps which assume the user has knowledge of python and pip, and the general ability to troubleshoot issues. For a detailed step-by-step walkthrough, refer to the [Local Walkthrough](guides/local) guide.
 
 1. Clone or [download and unzip](https://github.com/meisnate12/Plex-Meta-Manager/archive/refs/heads/master.zip) the repo.
 
@@ -64,11 +66,13 @@ python plex_meta_manager.py
 ```shell
 docker run -it -v <PATH_TO_CONFIG>:/config:rw meisnate12/plex-meta-manager
 ```
+
 * The `-it` flag allows you to interact with Plex Meta Manager when needed (such as for Trakt or MyAnimeList authentication).
+
 * The `-v <PATH_TO_CONFIG>:/config:rw` flag mounts the location you choose as a persistent volume to store your files.
-  * Change `<PATH_TO_CONFIG>` to a folder where your config.yml and other files are.
-  * The docker image defaults to running the configuration file named `config.yml` which resides in your persistent volume.
-  * If your directory has spaces (such as "My Documents"), place quotation marks around your directory pathing as shown here: `-v "<PATH_TO_CONFIG>:/config:rw"`
+    - Change `<PATH_TO_CONFIG>` to a folder where your config.yml and other files are.
+    - The docker image defaults to running the configuration file named `config.yml` which resides in your persistent volume.
+    - If your directory has spaces (such as "My Documents"), place quotation marks around your directory pathing as shown here: `-v "<PATH_TO_CONFIG>:/config:rw"`
 
 
 Example Docker Run command:

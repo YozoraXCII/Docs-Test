@@ -48,10 +48,13 @@ libraries:
         rating3_image: imdb
 ```
 
-* `rating1`, `rating1_image`, `rating2`, `rating2_image` are set to match the ratings that Plex already has assigned to those fields (critic/audience).  The order here is arbitrary.
-* `rating3` is set to be the user rating and it's image (`rating3_image`) is set to IMDb just because we have to pick something.
-* `reapply_overlays` is set to true to ensure that Plex Meta Manager always updates the overlays as we run things.
-* We do not recommend using `reapply_overlays: true` consistently in a live/production environment, make sure to switch this back to `false` when finished.
+    * `rating1`, `rating1_image`, `rating2`, `rating2_image` are set to match the ratings that Plex already has assigned to those fields (critic/audience).  The order here is arbitrary.
+
+    * `rating3` is set to be the user rating and it's image (`rating3_image`) is set to IMDb just because we have to pick something.
+
+    * `reapply_overlays` is set to true to ensure that Plex Meta Manager always updates the overlays as we run things.
+
+    * We do not recommend using `reapply_overlays: true` consistently in a live/production environment, make sure to switch this back to `false` when finished.
 
 </details>
 

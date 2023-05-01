@@ -8,32 +8,35 @@ This article will walk you through getting Plex Meta Manager set up and running.
 4. Setting up a metadata file and creating a couple sample collections.
 
 The specific steps you will be taking:
+
 1. Verify that Python 3.7 or better is installed and install it if not
 2. Verify that the Git tools are installed and install them if not
 3. Use `git` to retrieve the code
 4. Install requirements [extra bits of code required for Plex Meta Manager]
 5. Gather two things that Plex Meta Manager requires:
-   1. TMDb API Key
-   2. Plex URL and Token
+    - TMDb API Key
+    - Plex URL and Token
 6. Then, iteratively:
-   1. use `python` to run Plex Meta Manager
-   2. use a text editor to modify a couple of text files until you have a working config file and a single working metadata file.
+    - use `python` to run Plex Meta Manager
+    - use a text editor to modify a couple of text files until you have a working config file and a single working metadata file.
 
-Note that running a Python script is inherently a pretty technical process.  If you are unable or unwilling to learn the rudiments of using tools like python and git, you should probably strongly consider running Plex Meta Manager in [Docker](docker).  That will eliminate the Python and git installs from this process and make it as simple as it can be.
+Please note that using Python and Git can be technical. If you're not comfortable with these tools, you may want to use Docker to simplify the process. This will remove the need for Python and Git installs.
 
-If the idea of editing YAML files by hand is daunting, this may not be the tool for you.  All the configuration of Plex Meta Manager is done via YAML text files, so if you are unable or unwilling to learn how those work, you should stop here.
+Also, configuring Plex Meta Manager requires editing YAML files. If this is new to you, it may take some time to learn.
 
-Finally, this walkthrough is intended to give you a basic grounding in how to get Plex Meta Manager running.  It doesn't cover how to create your own collections, or how to add overlays, or any of the myriad other things Plex Meta Manager is capable of.  It provides a simple "Getting Started" guide for those for whom the standard install instructions make no sense; presumably because you've never run a Python script before.
+Finally, this article provides a basic guide to get you started with Plex Meta Manager. It doesn't cover all the advanced features that this tool offers, such as creating custom collections or adding overlays. It's intended to help those who are new to running Python scripts get up and running with Plex Meta Manager.
 
 ## Prerequisites.
 
-Nearly anywhere you see
+???+ info
 
-```
-something like this
-```
-
-That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).  In some cases it's displaying *output* from a command you've typed, but the difference should be apparent in context.
+    Nearly anywhere you see
+    
+    ```
+    something like this
+    ```
+    
+    That’s a command you’re going to type or paste into your terminal (OSX or Linux) or Powershell (Windows).  In some cases it's displaying *output* from a command you've typed, but the difference should be apparent in context.
 
 IMPORTANT NOTE:
 This walkthrough is going to be pretty pedantic.  I’m assuming you’re reading it because you have no idea how to get a Python script going, so I’m proceeding from the assumption that you want to be walked through every little detail.   You’re going to deliberately cause errors and then fix them as you go through it.  This is to help you understand what exactly is going on behind the scenes so that when you see these sorts of problems in the wild you will have some background to understand what’s happening.  If I only give you the happy path, then when you make a typo later on you’ll have no idea where that typo might be or why it’s breaking things.
@@ -47,27 +50,30 @@ This walkthrough is assuming you are doing the entire process on the same platfo
 
 ### Prepare a small test library [optional]
 
-```{include} wt/wt-test-library.md
-```
+    ```{include} wt/wt-test-library.md
+    ```
 
 ### Starting up your terminal.
 
 Since most of this is typing commands into a terminal, you'll need to have a terminal open.
 
 
-````{tab} Linux
-If your Linux system is remote to your computer, connect to it via SSH.  That SSH session is the terminal you will be using, so leave it open.
+=== ":fontawesome-brands-linux: Linux"
 
-If you are running this on a desktop Linux machine, start up the Terminal application.  That window will be the terminal you will type commands into throughout this walkthrough, so leave it open.
-````
-````{tab} OS X
-Open the Terminal app; this window will be the place you type commands throughout this walkthrough, so leave it open.  The Terminal app is in Applications -> Utilities.
+    If your Linux system is remote to your computer, connect to it via SSH.  That SSH session is the terminal you will be using, so leave it open.
+    
+    If you are running this on a desktop Linux machine, start up the Terminal application.  That window will be the terminal you will type commands into throughout this walkthrough, so leave it open.
 
-You can also use iTerm or some other terminal app if you wish.  If you don't know what that means, use Terminal.
-````
-````{tab} Windows
-Use the Start menu to open PowerShell.  This will be the window into which you type commands throughout this walkthrough, so leave it open.
-````
+=== ":fontawesome-brands-apple: macOS"
+
+    Open the Terminal app; this window will be the place you type commands throughout this walkthrough, so leave it open.  The Terminal app is in Applications -> Utilities.
+    
+    You can also use iTerm or some other terminal app if you wish.  If you don't know what that means, use Terminal.
+
+=== ":fontawesome-brands-windows: Windows"
+
+    Use the Start menu to open PowerShell.  This will be the window into which you type commands throughout this walkthrough, so leave it open.
+
 
 ### Installing Python.
 
@@ -81,22 +87,25 @@ python3 --version
 
 If this doesn't return `3.7.0` or higher, you'll need to get Python 3 installed.
 
-````{tab} Linux
-Describing a python install for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://techviewleo.com/how-to-install-python-on-ubuntu-linux/) might be useful.
-````
-````{tab} OS X
-Follow the instructions here: [Installing Python 3 on Mac OS X](https://docs.python-guide.org/starting/install3/osx/)
-````
-````{tab} Windows
+=== ":fontawesome-brands-linux: Linux"
 
-Before installing Python, try again without the `3`:
+    Describing a python install for any arbitrary linux is out of scope here, but if you're using Ubuntu, [this](https://techviewleo.com/how-to-install-python-on-ubuntu-linux/) might be useful.
 
-```
-python --version
-```
-Depending on the version of Python, you may need to use one or the other.  If this works, you're ready to go, jsut substitute `python` for `python3` in the couple places it appears below.
+=== ":fontawesome-brands-apple: macOS"
 
-Go to http://www.python.org/download and download the next-to-latest minor version of Python for Windows in 32 or 64-bit as appropriate for your system [probably 64-bit].  As this is written, that's 3.10, while the latest is 3.11.
+    Follow the instructions here: [Installing Python 3 on Mac OS X](https://docs.python-guide.org/starting/install3/osx/)
+
+=== ":fontawesome-brands-windows: Windows"
+
+    Before installing Python, try again without the `3`:
+
+    ```
+    python --version
+    ```
+
+    Depending on the version of Python, you may need to use one or the other.  If this works, you're ready to go, jsut substitute `python` for `python3` in the couple places it appears below.
+    
+    Go to http://www.python.org/download and download the next-to-latest minor version of Python for Windows in 32 or 64-bit as appropriate for your system [probably 64-bit].  As this is written, that's 3.10, while the latest is 3.11.
 
 #### Why the next-to-latest?
 
@@ -105,7 +114,7 @@ There is one dependency [`lxml`] that lags behind new Python releases; this will
 Once downloaded, run the installer.  Tick “Add to path” checkbox at the bottom and click “Install Now”.
 
 For Windows 10, you will need to enable scripts in PowerShell.  Follow the instructions [here](https://windowsloop.com/enable-powershell-scripts-execution-windows-10) to do so.  If you skip this step you're going to hit a hard stop in a moment.
-````
+
 
 ---
 
@@ -121,21 +130,24 @@ git --version
 
 If this doesn't return a version number, you'll need to get git installed.
 
-````{tab} Linux
-The git install is discussed here: [Download for Linux and Unix](https://git-scm.com/download/linux)
-````
-````{tab} OS X
-The git install is discussed here: [Git - Downloading Package](https://git-scm.com/download/mac)
-````
-````{tab} Windows
-Download the installer from [here](https://git-scm.com/download/windows)
+=== ":fontawesome-brands-linux: Linux"
 
-Run the install; you can probably just accept the defaults and click through except for the step that asks you to choose an editor; you probably want to choose something other than the default there:
+    The git install is discussed here: [Download for Linux and Unix](https://git-scm.com/download/linux)
 
-![Git Install](git-install.png)
+=== ":fontawesome-brands-apple: macOS"
 
-This install comes with its own command line interface.  **Do not use this interface in this walkthrough**.  Continue to do everything here in Powershell.
-````
+    The git install is discussed here: [Git - Downloading Package](https://git-scm.com/download/mac)
+
+=== ":fontawesome-brands-windows: Windows"
+
+    Download the installer from [here](https://git-scm.com/download/windows)
+    
+    Run the install; you can probably just accept the defaults and click through except for the step that asks you to choose an editor; you probably want to choose something other than the default there:
+    
+    ![Git Install](git-install.png)
+    
+    This install comes with its own command line interface.  **Do not use this interface in this walkthrough**.  Continue to do everything here in Powershell.
+
 
 ---
 
@@ -206,39 +218,42 @@ Later on you can move it elsewhere if you want, but for now put it there.  This 
 
 This walkthrough is going to use a "virtual environment", since that provides a simple way to keep the requirements for a given thing self-contained; think of it as a "sandbox" for this script.  It also provides a clean way to recover from mistakes, and keeps the host system clean.
 
-````{tab} Linux
-[type this into your terminal]
-```
-python3 -m venv pmm-venv
-```
-If you see an error like:
-```
-Error: Command '['/home/mroche/Plex-Meta-Manager/pmm-venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
-```
-You probably need to make sure the Python 3.9-specific virtualenv support library is installed:
-[type this into your terminal]
-```
-sudo apt-get install python3.9-venv
-```
-Then try the original venv command above again.
-````
-````{tab} OS X
-[type this into your terminal]
-```
-python3 -m venv pmm-venv
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-python -m venv pmm-venv
-```
-If you see:
-```
-Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
-```
-You apparently didn't check the “Add to path” checkbox above under [installing Python](#installing-python).  "Repair" your Python install and check "add python to environment variables".
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    python3 -m venv pmm-venv
+    ```
+    If you see an error like:
+    ```
+    Error: Command '['/home/mroche/Plex-Meta-Manager/pmm-venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
+    ```
+    You probably need to make sure the Python 3.9-specific virtualenv support library is installed:
+    [type this into your terminal]
+    ```
+    sudo apt-get install python3.9-venv
+    ```
+    Then try the original venv command above again.
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    python3 -m venv pmm-venv
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    python -m venv pmm-venv
+    ```
+    If you see:
+    ```
+    Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+    ```
+    You apparently didn't check the “Add to path” checkbox above under [installing Python](#installing-python).  "Repair" your Python install and check "add python to environment variables".
+
 
 <details>
   <summary>What did that do?</summary>
@@ -260,38 +275,41 @@ If you aren't looking at an error, you're ready to move on.
 
 That will create the virtual environment, and then you need to activate it:
 
-````{tab} Linux
-[type this into your terminal]
-```
-source pmm-venv/bin/activate
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-source pmm-venv/bin/activate
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-.\pmm-venv\Scripts\activate
-```
-If you see something like this:
-```powershell
-.\pmm-venv\Scripts\activate : File C:\Users\mroche\Plex-Meta-Manager\pmm-venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink LinkID=135170.
-At line:1 char:1
-+ .\pmm-venv\Scripts\activate
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
-```
-You apparently skipped the "enable scripts in Powershell" step above under [installing Python](#installing-python) for Windows.
+=== ":fontawesome-brands-linux: Linux"
 
-You will need to take care of that before moving on.  Follow the instructions [here](https://windowsloop.com/enable-powershell-scripts-execution-windows-10).
+    [type this into your terminal]
+    ```
+    source pmm-venv/bin/activate
+    ```
 
-Once you have done that, try the activation step again.
-````
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    source pmm-venv/bin/activate
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    .\pmm-venv\Scripts\activate
+    ```
+    If you see something like this:
+    ```powershell
+    .\pmm-venv\Scripts\activate : File C:\Users\mroche\Plex-Meta-Manager\pmm-venv\Scripts\Activate.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink LinkID=135170.
+    At line:1 char:1
+    + .\pmm-venv\Scripts\activate
+    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+        + FullyQualifiedErrorId : UnauthorizedAccess
+    ```
+    You apparently skipped the "enable scripts in Powershell" step above under [installing Python](#installing-python) for Windows.
+    
+    You will need to take care of that before moving on.  Follow the instructions [here](https://windowsloop.com/enable-powershell-scripts-execution-windows-10).
+    
+    Once you have done that, try the activation step again.
+
 
 That command will not produce any output if it works; it will display an error if a problem occurs.
 
@@ -314,24 +332,27 @@ An advantage of doing this in a virtual environment is that in the event somethi
 
 **IMPORTANT: In the future, when you want to run Plex Meta Manager, you will need to do this "activation" step every time.  Not the venv creation, just the activation**:
 
-````{tab} Linux
-[type this into your terminal]
-```
-source pmm-venv/bin/activate
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-source pmm-venv/bin/activate
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-.\pmm-venv\Scripts\activate
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    source pmm-venv/bin/activate
+    ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    source pmm-venv/bin/activate
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    .\pmm-venv\Scripts\activate
+    ```
+
 
 ### Installing requirements
 
@@ -392,8 +413,8 @@ Don't worry about the WARNING about `pip version thus-and-such` if it comes up.
 
 Let’s make sure it’s working so far.
 
-```{include} wt/wt-run-shell.md
-```
+    ```{include} wt/wt-run-shell.md
+    ```
 
 This is going to fail with an error, which you will then fix.
 
@@ -411,129 +432,135 @@ The default config file contains a reference to a directory that will show an er
 
 We'll create it here so the error doesn't show up later.
 
-````{tab} Linux
-[type this into your terminal]
-```
-mkdir config/assets
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-mkdir config/assets
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-mkdir config\assets
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    mkdir config/assets
+    ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    mkdir config/assets
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    mkdir config\assets
+    ```
+
 
 ### Setting up the initial config file
 
-```{include} wt/wt-01-basic-config.md
-```
+    ```{include} wt/wt-01-basic-config.md
+    ```
 
 #### Editing the config template
 
 First, make a copy of the template.  This is going to create a copy of the base template that you can then edit.  You only need to do this once.
 
-````{tab} Linux
-[type this into your terminal]
-```
-cp config/config.yml.template config/config.yml
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-cp config/config.yml.template config/config.yml
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-copy .\config\config.yml.template .\config\config.yml
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    cp config/config.yml.template config/config.yml
+    ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    cp config/config.yml.template config/config.yml
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    copy .\config\config.yml.template .\config\config.yml
+    ```
+
 
 Now open the copy in an editor:
 
-```{include} wt/wt-editor.md
-```
-
-```{include} wt/wt-02-config-bad-library.md
-```
+    ```{include} wt/wt-editor.md
+    ```
+    
+    ```{include} wt/wt-02-config-bad-library.md
+    ```
 
 #### Testing the config file
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+    ```{include} wt/wt-save.md
+    ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-shell.md
-```
-
-```{include} wt/wt-03-lib-err-and-fix.md
-```
+    ```{include} wt/wt-run-shell.md
+    ```
+    
+    ```{include} wt/wt-03-lib-err-and-fix.md
+    ```
 
 
 ### Creating a few sample collections.
 
-```{include} wt/wt-04-default-intro.md
-```
+    ```{include} wt/wt-04-default-intro.md
+    ```
 
 So let's run Plex Meta Manager and see this happen:
 
 
-```{include} wt/wt-run-shell.md
-```
-
-```{include} wt/wt-04b-default-after.md
-```
+    ```{include} wt/wt-run-shell.md
+    ```
+    
+    ```{include} wt/wt-04b-default-after.md
+    ```
 
 ### Setting up a metadata file and creating a sample collection.
 
-```{include} wt/wt-05-local-file.md
-```
+    ```{include} wt/wt-05-local-file.md
+    ```
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+    ```{include} wt/wt-save.md
+    ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-shell.md
-```
-
-```{include} wt/wt-06-local-after.md
-```
+    ```{include} wt/wt-run-shell.md
+    ```
+    
+    ```{include} wt/wt-06-local-after.md
+    ```
 
 ### Adding Overlays to movies.
 
-```{include} wt/wt-07-overlay-add.md
-```
+    ```{include} wt/wt-07-overlay-add.md
+    ```
 
 Save the file:
 
-```{include} wt/wt-save.md
-```
+    ```{include} wt/wt-save.md
+    ```
 
 Then run Plex Meta Manager again:
 
-```{include} wt/wt-run-shell.md
-```
-
-```{include} wt/wt-08-overlay-after.md
-```
-
-```{include} wt/wt-09-next-steps.md
-```
+    ```{include} wt/wt-run-shell.md
+    ```
+    
+    ```{include} wt/wt-08-overlay-after.md
+    ```
+    
+    ```{include} wt/wt-09-next-steps.md
+    ```
 
 When you are done, deactivate the virtual environment:
 
@@ -547,71 +574,77 @@ deactivate
 
 ### Scheduling
 
-```{include} wt/wt-10-scheduling.md
-```
+    ```{include} wt/wt-10-scheduling.md
+    ```
 
 ### I want to update to the latest version of Plex Meta Manager
 
-````{tab} Linux
-[type this into your terminal]
-```
-cd ~/Plex-Meta-Manager
-git pull
-source pmm-venv/bin/activate
-python -m pip install -r requirements.txt
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-cd ~/Plex-Meta-Manager
-git pull
-source pmm-venv/bin/activate
-python -m pip install -r requirements.txt
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-cd ~\Plex-Meta-Manager
-git pull
-.\pmm-venv\Scripts\activate
-python -m pip install -r requirements.txt
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    cd ~/Plex-Meta-Manager
+    git pull
+    source pmm-venv/bin/activate
+    python -m pip install -r requirements.txt
+    ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    cd ~/Plex-Meta-Manager
+    git pull
+    source pmm-venv/bin/activate
+    python -m pip install -r requirements.txt
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    cd ~\Plex-Meta-Manager
+    git pull
+    .\pmm-venv\Scripts\activate
+    python -m pip install -r requirements.txt
+    ```
+
 
 ### I want to use the develop branch
 
-````{tab} Linux
-[type this into your terminal]
-```
-cd ~/Plex-Meta-Manager
-git checkout develop
-git pull
-source pmm-venv/bin/activate
-python -m pip install -r requirements.txt
-```
-````
-````{tab} OS X
-[type this into your terminal]
-```
-cd ~/Plex-Meta-Manager
-git checkout develop
-git pull
-source pmm-venv/bin/activate
-python -m pip install -r requirements.txt
-```
-````
-````{tab} Windows
-[type this into your terminal]
-```
-cd ~/Plex-Meta-Manager
-git checkout develop
-git pull
-.\pmm-venv\Scripts\activate
-python -m pip install -r requirements.txt
-```
-````
+=== ":fontawesome-brands-linux: Linux"
+
+    [type this into your terminal]
+    ```
+    cd ~/Plex-Meta-Manager
+    git checkout develop
+    git pull
+    source pmm-venv/bin/activate
+    python -m pip install -r requirements.txt
+    ```
+
+=== ":fontawesome-brands-apple: macOS"
+
+    [type this into your terminal]
+    ```
+    cd ~/Plex-Meta-Manager
+    git checkout develop
+    git pull
+    source pmm-venv/bin/activate
+    python -m pip install -r requirements.txt
+    ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+    [type this into your terminal]
+    ```
+    cd ~/Plex-Meta-Manager
+    git checkout develop
+    git pull
+    .\pmm-venv\Scripts\activate
+    python -m pip install -r requirements.txt
+    ```
+
 
 ### I want to use the nightly branch
 
