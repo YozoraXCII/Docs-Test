@@ -59,7 +59,7 @@ plugins:
   - search:
       lang: en
   - glightbox
-
+  - include-markdown
 extra:
   social:
   - icon: fontawesome/solid/heart
