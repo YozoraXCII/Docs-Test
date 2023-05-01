@@ -59,6 +59,7 @@ plugins:
   - search:
       lang: en
   - glightbox
+  - external-markdown
 extra:
   social:
   - icon: fontawesome/solid/heart
@@ -253,7 +254,7 @@ nav:
             - Video Format: defaults/overlays/video_format.md
       - PLAYLIST DEFAULTS:
         - Playlists: defaults/playlist.md
-  - BUILDERS:
+  - CUSTOM FILES:
       - Templates: builders/templates.md
       - Filters: builders/filters.md
       - Builders Overview: builders/builders.md
