@@ -2,27 +2,29 @@ If the default metadata files do not allow you to create the collections you wan
 
 First, open the metadata file [this will create the file if it doesn't already exist]:
 
-````{tab} Linux
-[type this into your terminal]
+=== ":fontawesome-brands-linux: Linux"
 
-```
-nano "config/Movies.yml"
-```
-````
-````{tab} OS X
-[type this into your terminal]
+      [type this into your terminal]
+      
+      ```
+      nano "config/Movies.yml"
+      ```
 
-```
-nano "config/Movies.yml"
-```
-````
-````{tab} Windows
-[type this into your terminal]
+=== ":fontawesome-brands-apple: macOS"
 
-```
-notepad "config\Movies.yml"
-```
-````
+      [type this into your terminal]
+      
+      ```
+      nano "config/Movies.yml"
+      ```
+
+=== ":fontawesome-brands-windows: Windows"
+
+      [type this into your terminal]
+      
+      ```
+      notepad "config\Movies.yml"
+      ```
 
 In this file, add the following, exactly as it is shown here:
 
