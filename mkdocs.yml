@@ -100,13 +100,15 @@ nav:
       - Home: index.md
       - INSTALLATION:
         - Installing PMM: pmm/install/installation.md
-        - Walkthroughs:
-          - Local: pmm/install/guides/local.md
-          - Docker: pmm/install/guides/docker.md
+        - Installation Guides:
           - unRAID Walkthrough: pmm/install/guides/unraid.md
           - Kubernetes Walkthrough: pmm/install/guides/kubernetes.md
           - QNAP Walkthrough: pmm/install/guides/qnap.md
           - Synology Walkthrough: pmm/install/guides/synology.md
+        - In-Depth Walkthroughs:
+          - Local (Win/Mac/Linux): pmm/install/guides/local.md
+          - Docker: pmm/install/guides/docker.md
+
       - POST-INSTALL:
         - Run Commands & Env Variables: pmm/essentials/environmental.md
         - Knowledgebase / FAQ: pmm/essentials/kb.md
